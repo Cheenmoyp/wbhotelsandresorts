@@ -16,7 +16,7 @@ const Destination = (response) => {
     const [expanded, setExpanded] = useState(false);
     let hotel_name = [];
 
-    const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter?group_id=2565&city_name=${response.city}&star_rating=${startRating}&min_price&max_price`).then(response => {
+    const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter?group_id=2533&city_name=${response.city}&star_rating=${startRating}&min_price&max_price`).then(response => {
         return response.data.hotels_data
     })
     .catch(error => {

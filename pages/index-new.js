@@ -14,7 +14,7 @@ import {decode as base64_decode, encode as base64_encode} from 'base-64';
 
 export default function Home() {
   const router = useRouter()
-  const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST}/group-hotel-list/2565`).then(response => {
+  const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST}/group-hotel-list/2533`).then(response => {
         return response.data.hotels_data
       })
       .catch(error => {
@@ -98,172 +98,71 @@ const destinationResponsive = {
   return (
   <>
     <Header></Header> 
-<div className="slider-con">
-   
-     <video >
+ 
+ <div className="slider-con">
+	<video >
         <source src="/Images/video.mp4" type="video/mp4" />
     </video>
-      <div className="search-con">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1>Make Your Stay Comfortable </h1>
-              <h3>Get instant benefits with ROMT Rewards at more than 650 hotels in over 80 countries</h3>
-              <Search props={1}/>
-              <div className="search-categories">
-                <ul>
-                  <li> <a href="#" className="category"> <i className="fa fa-ravelry" aria-hidden="true"></i>
-                    <p>24,000+</p>
-                    <p className="det">Travel Experiences</p>
-                    </a> </li>
-                  <li> <a href="#" className="category"> <i className="fa fa-globe" aria-hidden="true"></i>
-                    <p>55+</p>
-                    <p className="det">Countries</p>
-                    </a> </li>
-                  <li> <a href="#" className="category"> <i className="fa fa-money" aria-hidden="true"></i>
-                    <p>Best Price</p>
-                    <p className="det">Guaranteed</p>
-                    </a> </li>
-                  <li> <a href="#" className="category"> <i className="fa fa-users" aria-hidden="true"></i>
-                    <p>84 Million+</p>
-                    <p className="det">Users Per Year</p>
-                    </a> </li>
-                </ul>
-              </div>
-            </div>
+  <div className="slider-caption">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+            <h1>Make Your Stay Comfortable </h1>
+            <h3>Get instant benefits with <strong>WB Hotels & Resorts</strong> Rewards at more than 650 hotels in over 80 countries</h3>
+			<a href="#" className="book-now2">Book Now</a>
           </div>
         </div>
       </div>
-</div>
-
-<div className="book-direct-section">
-  <div className="container">
-    <div className="row">
-      <div className="col-md-12">
-        <ul>
-          <li>
-            <div className="custom-heading">
-              <h2>Book <br/>
-                Direct </h2>
+	  <div className="search-categories">
+              <ul>
+                <li> 
+					<a href="#" className="category"> 
+						<span className="icon"><img src="/Images/icons/wifi.png" alt="" title="" /></span>	
+						<p className="det">Free WiFi</p>
+					</a> 
+				</li>
+                <li> 
+					<a href="#" className="category">
+						<span className="icon"><img src="/Images/icons/AvailableRooms.png" alt="" title="" /></span>
+						<p className="det">Available Rooms</p>
+					</a> 
+				</li>
+                <li> 
+					<a href="#" className="category"> 
+						<span className="icon"><img src="/Images/icons/24x7.png" alt="" title="" /></span>
+						<p>24x7 </p>
+					</a> 
+				</li>
+                <li> 
+				  <a href="#" className="category"> 
+					<span className="icon"><img src="/Images/icons/offers.png" alt="" title="" /></span>
+					<p>Offers</p>
+                  </a> 
+				</li>
+				  <li> 
+					<a href="#" className="category"> 
+						<span className="icon"><img src="/Images/icons/awards-white.png" alt="" title="" /></span>
+						<p>Awards</p>
+					</a> 
+				</li>
+              </ul>
             </div>
-          </li>
-          <li> <a href="#" className="b-direct-box">
-            <div className="icon"><img alt="" src="/Images/icons/BestRatesGuaranteed.png" /></div>
-            <h4>Best Rates Guaranteed</h4>
-            </a> </li>
-          <li> <a href="#" className="b-direct-box">
-            <div className="icon"><img alt="" src="/Images/icons/payat-hotel.png" title="" /></div>
-            <h4>Pay at Hotel</h4>
-            </a> </li>
-          <li> <a href="#" className="b-direct-box">
-            <div className="icon"><img alt="" src="/Images/icons/nohiddencost.png" title="" /></div>
-            <h4>No Hidden Charges</h4>
-            </a> </li>
-          <li> <a href="#" className="b-direct-box">
-            <div className="icon"><img alt="" src="/Images/icons/Exclusive-Offers.png" title="" /></div>
-            <h4>Exclusive Offers</h4>
-            </a> </li>
-          <li> <a href="#" className="b-direct-box">
-            <div className="icon"><img alt="" src="/Images/icons/Member-Rewards.png" title="" /></div>
-            <h4>Member Rewards</h4>
-            </a> </li>
-          <li> <a href="#" className="b-direct-box">
-            <div className="icon"><img alt="" src="/Images/icons/Wifi-Access.png" title="" /></div>
-            <h4>Wifi Access</h4>
-            </a> </li>
-        </ul>
-      </div>
     </div>
-  </div>
 </div>
-
-<div className="commitment-sec">
-  <div className="container">
-    <div className="row">
-      <div className="col-md-12">
-        <ul>
-          <li>
-            <div className="commitment-title"> ROMT - A COMMITMENT RESTRENGTHENED </div>
-          </li>
-          <li>
-            <div className="commitmenticons"> <img alt="" src="/Images/icons/RenewedSafetyProtocol.png" /> </div>
-            <div className="commitment-content">Renewed Safety<br/>
-              Protocol</div>
-          </li>
-          <li>
-            <div className="commitmenticons"> <img alt="" src="/Images/icons/ContactlessTechnology.png" /> </div>
-            <div className="commitment-content">Contactless<br/>
-              Technology</div>
-          </li>
-          <li>
-            <div className="commitmenticons"> <img alt="" src="/Images/icons/TrainedHygiene.png" /> </div>
-            <div className="commitment-content">Trained on<br/>
-              Hygiene</div>
-          </li>
-          <li>
-            <div className="commitmenticons"> <img alt="" src="/Images/icons/SaferRooms.png"/> </div>
-            <div className="commitment-content">Safer<br/>
-              Rooms</div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div className="packages-home">
-  <div className="container">
-    <div className="row">
-		<div className="col-md-10 offset-md-1 no-padding">
-        <div className="welcome-right">
-          <div className="carousel package-home"  id="welcomeSlider">
-		    <Carousel swipeable={true}
-				  draggable={true}
-				  infinite={true}
-				  responsive={responsive}>
-		        <div className="">
-		            <div className="col-md-12 row">
-		              <div className="col-md-7">
-		                <div className="welcome-sectio-left">
-		                  <h2>ROMT Special Winter Package </h2>
-		                  <div className="content">
-		                    <p> Just 3% of rooms in each destination win the <strong>ROMT</strong> rewards, the new global quality standard for vacation homes. </p>
-		                  </div>
-		                  <a href="package" className="exmore">Explore the Package </a><a  href={'/package-detail/MjU2NS9ST01UIFNwZWNpYWwgV2ludGVyIFBhY2thZ2U='} className="exmore blue-bg">Book the package</a> </div>
-		              </div>
-		              <div className="col-md-5 no-padding">
-		                <div className="box-welcome">
-		                  <figure><img src="/Images/kashmir.png" alt="" title="" /></figure>
-		                </div>
-		              </div>
-		            </div>
-		        </div>
-		        <div className="">
-		            <div className="col-md-12 row">
-		              <div className="col-md-7">
-		                <div className="welcome-sectio-left">
-		                  <h2>Honeymoon Package</h2>
-		                  <div className="content">
-		                    <p> Just 32% of rooms in each destination win the <strong>ROMT</strong> rewards, the new global quality standard for vacation homes. </p>
-		                  </div>
-		                  <a href="package" className="exmore">Explore the Package </a><a href={'/package-detail/MjU2NS9Ib25leW1vb24gUGFja2FnZQ=='} className="exmore blue-bg">Book the package</a> </div>
-		              </div>
-		              <div className="col-md-5 no-padding">
-		                <div className="box-welcome">
-		                  <figure><img src="/Images/honeymoon.png" alt="" title="" /></figure>
-		                </div>
-		              </div>
-		            </div>
-		        </div>
-		      
-            </Carousel>
-            
+<div className="search-con">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-10">
+			<div className="search-form-con">
+				<Search props={1}/>
+			</div>
           </div>
         </div>
       </div>
 	</div>
-</div>
-</div>
+ 
+ 
+ 
 
 <div className="our-hotel">
   <div className="container">
@@ -377,7 +276,7 @@ const destinationResponsive = {
   <div className="container">
     <div className="row">
       <div className="col-md-12">
-        <h2 className="heading1">Our Testimonial</h2>
+        <h2 className="heading1">What Our Client Says</h2>
       </div>
     </div>
     <div className="row">
@@ -390,20 +289,43 @@ const destinationResponsive = {
 				  infinite={true}
 				  responsive={testimonialResponsive}>
         <div style={{padding: '10px'}}>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/3uNbBykYo6M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
+				 <figure><img src="/Images/client.png" alt="" title="" /></figure>
+					<h4>Yercud, Munar Mysore</h4>
+                <div className="content">
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
+                </div>
+				<h5>Name</h5>
+		
+		</div>
         
         <div style={{padding: '10px'}}>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/3uNbBykYo6M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
+							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
+					<h4>Yercud, Munar Mysore</h4>
+                <div className="content">
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
+                </div>
+				<h5>Name</h5>
+
+	   </div>
         
         <div style={{padding: '10px'}}>
-	        <iframe width="560" height="315" src="https://www.youtube.com/embed/3uNbBykYo6M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-	    </div>
+							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
+					<h4>Yercud, Munar Mysore</h4>
+                <div className="content">
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
+                </div>
+				<h5>Name</h5>
+	  </div>
         
         <div style={{padding: '10px'}}>
-	        <iframe width="560" height="315" src="https://www.youtube.com/embed/3uNbBykYo6M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-	    </div>
+							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
+					<h4>Yercud, Munar Mysore</h4>
+                <div className="content">
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
+                </div>
+				<h5>Name</h5>
+		 
+	  </div>
     </Carousel>    
   </div>
 </div>

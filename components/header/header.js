@@ -12,23 +12,22 @@ export const Header = () => {
     }
 	//package list
     const [packageList, setPackageList] = useState([]);
-    const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-package-list/2565`).then(response => {
-        return response.data.package_details;
+    /* const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-package-list/2533`).then(response => {
+        return response.data;
     })
     .catch(error => {
         console.log('error', error);
     });
     fetcher.then(response => {
-        if(packageList.length == 0 ) {
-            setPackageList(response)
-        }
-    })
+        setPackageList(response.package_details)  
+    }) */
     return (
-        <>
+        < >
+		 <div className="headbar">
         <div className="container">
             <div className="row">
             <div className="col-md-2">
-                <div className="logo"> <a href={"/index-new"}> <img layout={'fill'} src="/Images/ROMTlogosvg.svg" alt="" title=""/> </a> </div>
+                <div className="logo"> <a href={"/index-new"}> <img layout={'fill'} src="/Images/logo.png" alt="" title=""/> </a> </div>
             </div>
             <div className="col-md-7">
                 <div className="nav-con">
@@ -92,11 +91,11 @@ export const Header = () => {
                                 <div className="col-md-4">
                                 <span className="menu-heading">Top Hotels</span>
                                 <ul className="nav flex-column">
-                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ4NA=='}>Livgrand Atisaya Resort</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5Ng=='}>Livgrand Bison Rise Resort</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5OA=='}>Livgrand Hotel Dreams Paradise</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5OA=='}>Livgrand Hotel Dreams Paradise</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjUwMg=='}>UDS Coco Hotels & Resorts, Udumalpet</a></li>
+                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ4NA=='}>Aditi Vadodara</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5Ng=='}>Manas Dhule</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5OA=='}>Hotel Singhs</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5OA=='}>Blue Wheel</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjUwMg=='}>Asha Palace </a></li>
                                 </ul>
                                 </div>
                                 
@@ -119,18 +118,18 @@ export const Header = () => {
                             <div className="container">
                             <div className="row">
                                 <div className="col-md-4"> 
-                                <span className="menu-heading">ROMT Offers</span>
+                                <span className="menu-heading">WB Hotels Offers</span>
                                 <ul className="nav flex-column">
-                                    <li className="nav-item"> <a className="nav-link active" href={"/offers"}>ROMT Member Rate</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={"/offers"}>WB Hotels Member Rate</a></li>
           
                                 </ul>
                                 </div>
                                 
                                 <div className="col-md-4">
-                                <span className="menu-heading">ROMT Packages</span>
+                                <span className="menu-heading">WB Hotels Packages</span>
                                 <ul className="nav flex-column">
                                     {packageList.map((data,index)=>{
-                                        let url = base64_encode(2565 + '/' + data.package_name);
+                                        let url = base64_encode(2533 + '/' + data.package_name);
                                         return (
                                             <li className="nav-item" key={index}> 
                                             <a className="nav-link" href={"/package-detail/"+url}>{data.package_name}</a>
@@ -170,7 +169,7 @@ export const Header = () => {
 								<div className="col-md-6 div1">
 								  <div className="signin-left">
 								   <div className="signinpage-logo">
-									 <a href="index-new"> <img src="/Images/ROMTlogosvg.svg" alt="" title=""/> </a>
+									 <a href="index-new"> <img src="/Images/logo.png" alt="" title=""/> </a>
 								   </div>
 								   <div className="signin-form">
 									 <h4>Welcome back, please login to your account</h4>
@@ -209,7 +208,10 @@ export const Header = () => {
             </Modal>
 			
 			
-        </div>
-        </>
+	    	 
+		</div>
+		</div>
+		
+        </ >
     )
 }

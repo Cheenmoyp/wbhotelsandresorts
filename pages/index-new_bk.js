@@ -10,7 +10,7 @@ import Search from '../components/search/search';
 
 export default function Home() {
   const router = useRouter()
-  const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST}/group-hotel-list/2565`).then(response => {
+  const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST}/group-hotel-list/2533`).then(response => {
         return response.data.hotels_data
       })
       .catch(error => {

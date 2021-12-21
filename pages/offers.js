@@ -8,7 +8,7 @@ import axios from 'axios';
 const Package = () => {
 
     const [HotelList, setHotelList] = useState([]);
-    const fetch  = axios.get(`${process.env.NEXT_PUBLIC_HOST}/group-hotel-list/2564`).then(response => {
+    const fetch  = axios.get(`${process.env.NEXT_PUBLIC_HOST}/group-hotel-list/2533`).then(response => {
         return response.data.hotels_data;
       })
       .catch(error => {

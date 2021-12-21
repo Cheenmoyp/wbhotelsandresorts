@@ -66,7 +66,7 @@ export default function Search(props) {
 		} else {
 			setSuggestBox(false);
 		} 
-		axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/query/2565/${event.target.value}`).then(response => {
+		axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/query/2533/${event.target.value}`).then(response => {
 			
 			setSuggestBoxData(response.data.hotels_data);
 		  })
