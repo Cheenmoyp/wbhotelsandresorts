@@ -418,7 +418,7 @@ const HotelDetails = (response) => {
 				  {response.hoteldata.images.map((slide, index)=>{
 					return (
 						<div key={index}>
-							<img src={slide} />
+							<img src={slide} alt={index} />
 						</div>
 					)
 				})}

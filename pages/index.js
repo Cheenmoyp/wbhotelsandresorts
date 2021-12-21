@@ -10,7 +10,7 @@ import Search from '../components/search/search';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import {decode as base64_decode, encode as base64_encode} from 'base-64';
-import ReactPlayer from 'react-player'
+//import ReactPlayer from 'react-player'
 
 
 export default function Home() {
@@ -102,14 +102,7 @@ const destinationResponsive = {
  
  <div className="slider-con">
 	
-	<ReactPlayer 
-		  playing
-		  loop
-          className='react-player'
-          url="/Images/video.mp4"
-          width='100%'
-          height='100%'
-        />
+	
   <div className="slider-caption">
       <div className="container">
         <div className="row">
