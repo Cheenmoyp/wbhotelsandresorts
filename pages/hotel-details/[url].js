@@ -10,7 +10,7 @@ import Modal from "react-bootstrap/Modal";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-const HotelDetails = (response) => {
+const HotelDetails = (response) => { 
 	const [lightboxmodal, setLightboxmodal] = useState(false);
 	const handleLightBoxClick = () => {
         setLightboxmodal(!lightboxmodal);

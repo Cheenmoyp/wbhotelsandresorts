@@ -27,7 +27,7 @@ export const Header = () => {
         <div className="container">
             <div className="row">
             <div className="col-md-2">
-                <div className="logo"> <a href={"/index-new"}> <img layout={'fill'} src="/Images/logo.png" alt="" title=""/> </a> </div>
+                <div className="logo"> <a href={"/"}> <img layout={'fill'} src="/Images/logo.png" alt="" title=""/> </a> </div>
             </div>
             <div className="col-md-7">
                 <div className="nav-con">
