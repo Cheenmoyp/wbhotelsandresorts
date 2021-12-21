@@ -102,11 +102,17 @@ const destinationResponsive = {
  
  <div className="slider-con">
 	
-	<ReactPlayer 
-		  //playing
-		  //loop
+	<ReactPlayer
           className='react-player'
           url="/Images/video.mp4"
+		  playing
+		  muted
+		  loop
+		  config={{ file: { attributes: {
+			autoPlay: true,
+            preload: "auto",
+			muted: true
+		  }}}}
           width='100%'
           height='100%'
         />
