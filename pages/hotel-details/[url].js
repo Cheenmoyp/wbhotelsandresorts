@@ -469,7 +469,7 @@ export async function getServerSideProps(context) {
         `${process.env.NEXT_PUBLIC_HOST_BE}/hotel-details?hotel_id=${url_param[0]}`
     );
 
-    const response = await res.json();
+    const response = await res.json(); 
     return { props:  {hoteldata : response.hotel_data, search: url_param} };
 }
 

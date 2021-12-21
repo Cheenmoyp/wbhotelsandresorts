@@ -104,6 +104,7 @@ const destinationResponsive = {
 	
 	<ReactPlayer 
 		  playing
+		  loop
           className='react-player'
           url="/Images/video.mp4"
           width='100%'
