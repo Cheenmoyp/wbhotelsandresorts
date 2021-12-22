@@ -301,7 +301,7 @@ const destinationResponsive = {
 				  draggable={true}
 				  infinite={true}
 				  responsive={testimonialResponsive}>
-        <div style={{padding: '10px'}}>
+        <div style={{padding: '10px'}} className="clientbox">
 				 <figure><img src="/Images/client.png" alt="" title="" /></figure>
 					<h4>Yercud, Munar Mysore</h4>
                 <div className="content">
@@ -311,7 +311,7 @@ const destinationResponsive = {
 		
 		</div>
         
-        <div style={{padding: '10px'}}>
+        <div style={{padding: '10px'}} className="clientbox">
 							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
 					<h4>Yercud, Munar Mysore</h4>
                 <div className="content">
@@ -321,7 +321,7 @@ const destinationResponsive = {
 
 	   </div>
         
-        <div style={{padding: '10px'}}>
+        <div style={{padding: '10px'}} className="clientbox">
 							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
 					<h4>Yercud, Munar Mysore</h4>
                 <div className="content">
@@ -330,7 +330,7 @@ const destinationResponsive = {
 				<h5>Name</h5>
 	  </div>
         
-        <div style={{padding: '10px'}}>
+        <div style={{padding: '10px'}} className="clientbox">
 							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
 					<h4>Yercud, Munar Mysore</h4>
                 <div className="content">

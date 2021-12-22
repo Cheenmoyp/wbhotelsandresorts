@@ -43,10 +43,10 @@ export const Header = () => {
                                 <span className="menu-heading">All Destinations</span> 
                                 <ul className="nav flex-column">
                                     <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('coimbatore')}>Coimbatore</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('nagalur')}>Nagalur</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('namakkal')}>Namakkal</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('devikolam')}>Devikolam</a></li>
                                     <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('yercaud')}>Yercaud</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('kodaiKanal')}>KodaiKanal</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('mysore')}>Mysore</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('vadodara')}>Vadodara</a></li>
                         
                                 </ul>
                                 </div>
@@ -54,20 +54,21 @@ export const Header = () => {
                                 <div className="col-md-4">
                                 <span className="menu-heading">Top Destinations</span>
                                 <ul className="nav flex-column">
-                                <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('coimbatore')}>Coimbatore</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('yercaud')}>Yercaud</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('kodaiKanal')}>KodaiKanal</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('mysore')}>Mysore</a></li>
+                                <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('dhule')}>Dhule</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('mumbai')}>Mumbai</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('bhubaneswar')}>Bhubaneswar</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('kanpur')}>Kanpur</a></li>
                    
                                 </ul>
                                 </div>
 
                                 <div className="col-md-4">
-                                <span className="menu-heading">Destination Ideas</span>
+                                <span className="menu-heading">More Destinations</span>
                                 <ul className="nav flex-column">
-                                    <li className="nav-item"> <a className="nav-link" href="#">Premium Resort</a> </li>
-                                    <li className="nav-item"> <a className="nav-link" href="#">Standard Resort</a> </li>
-                                    <li className="nav-item"> <a className="nav-link" href="#">Business & Leisure Hotel</a> </li>
+                                   <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('jaunpur')}>Jaunpur</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('newdelhi')}>New Delhi</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('coorg')}>Coorg</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('patna')}>Patna</a></li>
                                 </ul>
                                 </div>
                             </div>
@@ -81,21 +82,21 @@ export const Header = () => {
                                 <div className="col-md-4"> 
                                 <span className="menu-heading">Hotel By Location</span>
                                 <ul className="nav flex-column">
-                                <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('coimbatore')}>Coimbatore</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('erode')}>Erode</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('krishnagiri')}>Krishnagiri</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('munnar')}>Munnar</a></li>
+                               <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('coimbatore')}>Coimbatore</a></li>
                                     <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('yercaud')}>Yercaud</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('kodaiKanal')}>KodaiKanal</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('mysore')}>Mysore</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('vadodara')}>Vadodara</a></li>
                                 </ul>
                                 </div>
                                 <div className="col-md-4">
                                 <span className="menu-heading">Top Hotels</span>
                                 <ul className="nav flex-column">
-                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ4NA=='}>Aditi Vadodara</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5Ng=='}>Manas Dhule</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5OA=='}>Hotel Singhs</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ5OA=='}>Blue Wheel</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjUwMg=='}>Asha Palace </a></li>
+                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwNw=='}>Aditi Vadodara</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwOA=='}>Manas Dhule</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwOQ=='}>Hotel Singhs</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQxMA=='}>Blue Wheel</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'hotel-details/MjQxMg=='}>Asha Palace </a></li>
                                 </ul>
                                 </div>
                                 

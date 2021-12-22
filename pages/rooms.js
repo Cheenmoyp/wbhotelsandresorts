@@ -184,7 +184,7 @@ export default function Rooms(props) {
                                             <button onClick={() => handleClick(slide.room_type_id, slide.max_people, slide.rack_price, slide.room_type)} id={slide.room_type_id}
                                             >More Details</button>
                                         </li>
-                                        <li className="col-6"><a href="../hotel-booking">Book Now</a></li>
+                                        <li className="col-6"><a href="">Book Now</a></li>
                                     </ul>
                                     </div>
                                 </div>

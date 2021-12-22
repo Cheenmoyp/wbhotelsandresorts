@@ -609,7 +609,7 @@ div#register-form-modal {
     z-index: 1;
 }
 .search-con form button, .search-con form input, .search-con form optgroup, .search-con form select, .search-con form textarea {
-    padding: 15PX;
+    padding: 6px;
     border: none;
     font-size: 13px;
 }
@@ -4198,7 +4198,7 @@ footer.site-footer {
     -o-transition: all 0.3s;
 }
 footer a:hover, footer a, footer a:visited {
-    color: #b7b3cb;
+    color: #9f9f9f;
     text-decoration: none;
 }
 .list-2 li:hover:before {
@@ -6028,3 +6028,18 @@ h3.heding-btmborder:before {
     font-weight: 300;
     margin: 0 0 19px;
 }
+
+
+a.book-now2 {
+    padding: 8px 26px;
+    background: #DAA520;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #DAA520;
+    text-decoration: none;
+}
+
+.clientbox  h4 {font-size:16px; text-align:center;}
+.clientbox  p{font-size:13px;}
+.clientbox  h5{font-size:15px;  text-align:center!important;}
