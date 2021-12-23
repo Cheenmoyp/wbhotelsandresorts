@@ -80,32 +80,34 @@ export const Header = () => {
                             <div className="container">
                             <div className="row">
                                 <div className="col-md-4"> 
-                                <span className="menu-heading">Hotel By Location</span>
+                                <span  > </span>
                                 <ul className="nav flex-column">
-                               <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('coimbatore')}>Coimbatore</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('yercaud')}>Yercaud</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('kodaiKanal')}>KodaiKanal</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('mysore')}>Mysore</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('vadodara')}>Vadodara</a></li>
-                                </ul>
-                                </div>
-                                <div className="col-md-4">
-                                <span className="menu-heading">Top Hotels</span>
-                                <ul className="nav flex-column">
-                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwNw=='}>Aditi Vadodara</a></li>
+                              <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwNw=='}>Aditi Vadodara</a></li>
                                     <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwOA=='}>Manas Dhule</a></li>
                                     <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwOQ=='}>Hotel Singhs</a></li>
                                     <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQxMA=='}>Blue Wheel</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'hotel-details/MjQxMg=='}>Asha Palace </a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQxMg=='}>Asha Palace </a></li>
+                                </ul>
+                                </div>
+                                <div className="col-md-4">
+                                <span  > </span>
+                                <ul className="nav flex-column">
+                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwNw=='}>Sehej Inn</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQxOA=='}>West Blue</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQyMQ=='}>Raahi Palace</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQyMw=='}>Sunny </a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQyNA=='}>Amit by WB Hotels </a></li>
                                 </ul>
                                 </div>
                                 
                                 <div className="col-md-4">
-                                <span className="menu-heading">Hotel By Type</span>
+                                <span > </span>
                                 <ul className="nav flex-column">
-                                    <li className="nav-item"> <a className="nav-link" href="#"> Luxury</a> </li>
-                                    <li className="nav-item"> <a className="nav-link" href="#"> Boutique</a> </li>
-                                    <li className="nav-item"> <a className="nav-link" href="#"> Business</a> </li>
+                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ0Mg=='}>Party Zone</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ0NA=='}>Hotel Siddharth </a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ0Nw=='}>Great Ganga Palace</a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ0OA=='}>Hotel Rabis </a></li>
+                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ2MA=='}>Madhuyamini </a></li>
                                 </ul>
                                 </div>
                                 
@@ -115,16 +117,14 @@ export const Header = () => {
                         </div>
                         </li>
                         
-                       <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" > Blog </a>
-                        
-                        </li>
+                      
                     </ul>
                     </div>
                 </nav>
                 </div>
             </div>
             <div className="col-md-3">
-                <div className="top-btn-group"> <a href='#' data-toggle="modal" data-target="#loginmodal" onClick={() => handleLoginBoxClick()} className="sign-in-btn"><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</a> <a href="#" className="join-us">  Contact us</a> </div>
+                <div className="top-btn-group">   <a href="contact-us" className="join-us">  Contact us</a> </div>
             </div>
             </div>
 			
