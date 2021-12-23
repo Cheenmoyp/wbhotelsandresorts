@@ -11,16 +11,16 @@ export const Header = () => {
         setLoginmodal(!loginmodal);
     }
 	//package list
-    const [packageList, setPackageList] = useState([]);
-    /* const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-package-list/2533`).then(response => {
+    const [destinationList, setDestinatioList] = useState([]);
+     const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-destination-list/2533/ALL`).then(response => {
         return response.data;
     })
     .catch(error => {
         console.log('error', error);
     });
     fetcher.then(response => {
-        setPackageList(response.package_details)  
-    }) */
+        setDestinatioList(response.destinations)  
+    }) 
     return (
         < >
 		 <div className="headbar">
@@ -39,38 +39,22 @@ export const Header = () => {
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <div className="container">
                             <div className="row">
-                                <div className="col-md-4"> 
+                                <div className="col-md-12"> 
                                 <span className="menu-heading">All Destinations</span> 
-                                <ul className="nav flex-column">
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('coimbatore')}>Coimbatore</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('yercaud')}>Yercaud</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('kodaiKanal')}>KodaiKanal</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('mysore')}>Mysore</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('vadodara')}>Vadodara</a></li>
-                        
+                                <ul className="nav flex-column menublocks">
+                                    {destinationList.map((destination, index) => {
+                                        console.log(destination);
+                                        return (
+                                            <li  key={index}> <a className="nav-link active" href={'/destination/'+ base64_encode(destination)} >{destination}</a></li>
+                                           
+                                        )
+                                    })}
                                 </ul>
                                 </div>
                                 
-                                <div className="col-md-4">
-                                <span className="menu-heading">Top Destinations</span>
-                                <ul className="nav flex-column">
-                                <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('dhule')}>Dhule</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('mumbai')}>Mumbai</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('bhubaneswar')}>Bhubaneswar</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('kanpur')}>Kanpur</a></li>
-                   
-                                </ul>
-                                </div>
+                              
 
-                                <div className="col-md-4">
-                                <span className="menu-heading">More Destinations</span>
-                                <ul className="nav flex-column">
-                                   <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('jaunpur')}>Jaunpur</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('newdelhi')}>New Delhi</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('coorg')}>Coorg</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/destination/'+ base64_encode('patna')}>Patna</a></li>
-                                </ul>
-                                </div>
+                              
                             </div>
                             </div>
                         </div>

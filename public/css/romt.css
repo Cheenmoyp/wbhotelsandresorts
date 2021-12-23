@@ -6043,3 +6043,7 @@ a.book-now2 {
 .clientbox  h4 {font-size:16px; text-align:center;}
 .clientbox  p{font-size:13px;}
 .clientbox  h5{font-size:15px;  text-align:center!important;}
+
+
+.menublocks li{float:left!important; width:32%; list-style-type:none;}
+.menublocks li a{float:left!important; width:32%; list-style-type:none;}
