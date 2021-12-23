@@ -89,36 +89,7 @@ export default function Search(props) {
                 });
                 }}
                 />
-				
-            </div>
-            <div className="form-control">
-                
-				<DatePicker id="datepicker" className="datepicker" selected={formData.checkin?formData.checkin :''} placeholder="Check In" onChange={(date) => {
-                    handleTextChange({
-                        checkin: date,
-                    });
-                }} />
-            </div>
-            <div className="form-control">
-               
-				<DatePicker id="datepicker" className="datepicker" selected={formData.checkout?formData.checkout :''} placeholder="Check Out" onChange={(date) => {
-                    handleTextChange({
-                        checkout: date,
-                    });
-                }} />
-            </div>
-            <div className="form-control dropdown-box">
-                <input type="number" name="" placeholder="Adult" />
-            </div>
-            <div className="form-control" style={{border: "none"}}>
-                <input type="number" name="" placeholder="Kids" />
-            </div>
-            <button className="btn site-button" onClick={handleClick}>
-            Search
-            </button>
-			
-        </form>
-		<div className={`suggestions-container ${suggestClass}`}>
+				<div className={`suggestions-container ${suggestClass}`}>
 			<ul>
 			
 			{
@@ -143,6 +114,35 @@ export default function Search(props) {
 			
 			</ul>
 		</div>
+            </div>
+            <div className="form-control">
+                
+				<DatePicker id="datepicker" className="datepicker" selected={formData.checkin?formData.checkin :''} placeholder="Check In" onChange={(date) => {
+                    handleTextChange({
+                        checkin: date,
+                    });
+                }} />
+            </div>
+            <div className="form-control">
+               
+				<DatePicker id="datepicker" className="datepicker" selected={formData.checkout?formData.checkout :''} placeholder="Check Out" onChange={(date) => {
+                    handleTextChange({
+                        checkout: date,
+                    });
+                }} />
+            </div>
+            <div className="form-control ">
+                <input type="number" name="" placeholder="Adult" />
+            </div>
+            <div className="form-control" style={{border: "none"}}>
+                <input type="number" name="" placeholder="Kids" />
+            </div>
+            <button className="btn site-button" onClick={handleClick}>
+            Search
+            </button>
+			
+        </form>
+		
 		</>
     )
 }

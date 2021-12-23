@@ -43,6 +43,7 @@ const HotelDetails = (response) => {
 	    var q = base64_encode(checkin+"|"+checkout+"|"+hotel_id+"||||");
 	    var url = "https://wbhotels.bookingjini.com";
 	    var be_url = url+'/property/?q='+q;
+		console.log('response.hoteldata.allImages',response.hoteldata);
   return (
     <>
     <Header></Header>
@@ -103,13 +104,14 @@ const HotelDetails = (response) => {
                   </div>
                 </div>
                 <div className="col-md-4">
+					
                   <div className="hotel-detail-bannerbox hotel-gallery">
-                    <figure> <a href="#" data-toggle="modal" data-target="#hotelphotos" onClick={() => handleLightBoxClick()}><img src={response.hoteldata.image} alt="" title=""/></a>
-                      <h3><a href="#">25+ Photos</a></h3>
+                    <figure> <a href="#" data-toggle="modal" data-target="#hotelphotos"/*  onClick={() => handleLightBoxClick()} */><img src={response.hoteldata.images && response.hoteldata.images>=1 ? response.hoteldata.images[0].image_name:response.hoteldata.image} alt="" title=""/></a>
+                      <h3><a href="#"></a></h3>
                     </figure>
                   </div>
                   <div className="hotel-detail-bannerbox hotel-video">
-                    <figure> <a href="#" className="v-button" data-toggle="modal" data-src="https://youtu.be/X4p4dFHDQgE" data-target="#videoModal"><img src={response.hoteldata.image} alt="" title=""/></a>
+                    <figure> <a href="#" className="v-button" data-toggle="modal" data-src="https://youtu.be/X4p4dFHDQgE" data-target="#videoModal"><img src={response.hoteldata.images && response.hoteldata.images.length>=2 ? response.hoteldata.images[1].image_name:response.hoteldata.image} alt="" title=""/></a>
                       <h4 className="video"><a href="#" className="v-button" data-toggle="modal" data-src="https://youtu.be/X4p4dFHDQgE" data-target="#videoModal"><i className="fa fa-play" aria-hidden="true"></i><br/>
                         <span>Video</span> </a></h4>
                     </figure>
@@ -262,7 +264,7 @@ const HotelDetails = (response) => {
         </div>
       </div>
       <div  id="view-available-rooms"></div>
-      <Rooms name={response.hoteldata.hotel_name} room_id={response.hoteldata.hotel_id} search={response.search}/>
+      <Rooms be_url={be_url} api_key={response.hoteldata.api_key} name={response.hoteldata.hotel_name} room_id={response.hoteldata.hotel_id} search={response.search}/>
     </div>
   
     <div className="guestreviewssec">

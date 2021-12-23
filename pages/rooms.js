@@ -26,7 +26,7 @@ export default function Rooms(props) {
     // 18-11-2021 - checkout
     // replace this dynamic url 
         // `${process.env.NEXT_PUBLIC_HOST_BE}/bookingEngine/get-inventory/644406a7918f871f3a8568c58e56e77b/${props.search[0]}/${props.search[2]}/${props.search[3]/INR`
-    const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/bookingEngine/get-inventory/644406a7918f871f3a8568c58e56e77b/1993/17-11-2021/18-11-2021/INR`).then(response => {
+    const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/bookingEngine/get-inventory/${props.api_key}/${props.room_id}/17-11-2021/18-11-2021/INR`).then(response => {
         return response.data.data
       })
       .catch(error => {
@@ -109,7 +109,7 @@ export default function Rooms(props) {
           </div>
           <div className="packages-filter roomes-at-box-con">
             <div className="row">
-                {Rooms.map((slide, index1)=>{
+                {Rooms.map((slide, index1)=>{  console.log('slide',slide);
                     let amenities = slide.allImages;
                     let rateplans = slide.rate_plans;
                     return (
@@ -138,7 +138,7 @@ export default function Rooms(props) {
                                 <div className="room-content">
                                     <div className="room-dertails">
                                     <ul>
-                                        <li><span><img src="/Images/hotels/icons/sq-ft.png" alt="" title=""/></span>144sq.ft </li>
+                                        <li><span><img src="/Images/hotels/icons/sq-ft.png" alt="" title=""/></span>{slide.room_size_value} sq.ft </li>
                                         <li><span><img src="/Images/hotels/icons/bed.png" alt="" title=""/></span>{slide.bed_type} Bed</li>
                                     </ul>
                                     </div>
@@ -153,7 +153,7 @@ export default function Rooms(props) {
                                     </div>
                                     <div className="more-add">
                                         <ul>
-                                            {rateplans.map((rateplan,index4) =>{
+                                            {rateplans && rateplans.map((rateplan,index4) =>{
                                                 return (
                                                     <li key={index4}>
                                                         <div className="row">
@@ -184,7 +184,7 @@ export default function Rooms(props) {
                                             <button onClick={() => handleClick(slide.room_type_id, slide.max_people, slide.rack_price, slide.room_type)} id={slide.room_type_id}
                                             >More Details</button>
                                         </li>
-                                        <li className="col-6"><a href="">Book Now</a></li>
+                                        <li className="col-6"><a href={props.be_url}>Book Now</a></li>
                                     </ul>
                                     </div>
                                 </div>

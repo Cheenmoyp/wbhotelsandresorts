@@ -114,36 +114,7 @@ export const Header = () => {
                             
                         </div>
                         </li>
-                        <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Offers & Packages </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <div className="container">
-                            <div className="row">
-                                <div className="col-md-4"> 
-                                <span className="menu-heading">WB Hotels Offers</span>
-                                <ul className="nav flex-column">
-                                    <li className="nav-item"> <a className="nav-link active" href={"/offers"}>WB Hotels Member Rate</a></li>
-          
-                                </ul>
-                                </div>
-                                
-                                <div className="col-md-4">
-                                <span className="menu-heading">WB Hotels Packages</span>
-                                <ul className="nav flex-column">
-                                    {packageList.map((data,index)=>{
-                                        let url = base64_encode(2533 + '/' + data.package_name);
-                                        return (
-                                            <li className="nav-item" key={index}> 
-                                            <a className="nav-link" href={"/package-detail/"+url}>{data.package_name}</a>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                                </div>
-                            
-                            </div>
-                            </div>
-                        </div>
-                        </li>
+                        
                        <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" > Blog </a>
                         
                         </li>

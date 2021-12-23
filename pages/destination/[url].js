@@ -270,7 +270,7 @@ export async function getServerSideProps(context) {
     );
 	
     const response = await res.json();
-    const city = response.hotels_data[0].city_name
+    const city = response.hotels_data[0] && response.hotels_data[0].city_name
 
     if (!response) {
         return {
