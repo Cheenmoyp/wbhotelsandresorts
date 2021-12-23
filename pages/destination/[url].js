@@ -7,7 +7,6 @@ import Search from '../../components/search/search';
 import StarRatings from 'react-star-ratings';
 import axios from 'axios';
 import {decode as base64_decode, encode as base64_encode} from 'base-64';
-import RomtCss from '../../components/css/romtCss';
 
 const Destination = (response) => {
 
@@ -36,7 +35,7 @@ const Destination = (response) => {
 
     let url = base64_encode((hotelList.length > 0 && hotelList[0].hotel_id) +'/'+ response.url_param[0] +'/'+ response.url_param[1] +'/'+ response.url_param[2]); 
 
-    console.log('search', (hotelList.length > 0 && hotelList[0].hotel_id), url)
+    //console.log('search', (hotelList.length > 0 && hotelList[0].hotel_id), url)
 	const toggledClass = expanded ? 'expanded' : 'collapsed';
   return (
     <>
@@ -253,7 +252,6 @@ const Destination = (response) => {
     </div>
 
     <Footer></Footer>
-    <RomtCss/>
     </>
   )
 }
@@ -261,12 +259,12 @@ const Destination = (response) => {
 // This gets called on every request
 export async function getServerSideProps(context) {
     
-    console.log(base64_decode(context.params.url));
+    //console.log('helo',base64_decode(context.params.url));return 1;
     let url_param = base64_decode(context.params.url).split("/");
 	
     // Fetch data from external API
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST_BE}/query/2564/${url_param[0]}`
+        `${process.env.NEXT_PUBLIC_HOST_BE}/query/2533/${url_param[0]}`
     );
 	
     const response = await res.json();
