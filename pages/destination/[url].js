@@ -12,11 +12,12 @@ const Destination = (response) => {
 
     const [hotelList, setHotelList] = useState([])
     const [startRating, setStarRating] = useState();
+    const [destinationBanner, setDestinationBanner] = useState('');
     const [expanded, setExpanded] = useState(false);
     let hotel_name = [];
 
     const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter?group_id=2533&city_name=${response.city}&star_rating=${startRating}&min_price&max_price`).then(response => {
-        return response.data.hotels_data
+        return response.data;
     })
     .catch(error => {
         console.log('error', error);
@@ -24,7 +25,8 @@ const Destination = (response) => {
 
     fetcher.then(response => {
         if(hotelList.length == 0 ) {
-            setHotelList(response)
+            setHotelList(response.hotels_data)
+            setDestinationBanner(response.destination_image)
         }
     })
 	
@@ -68,7 +70,7 @@ const Destination = (response) => {
             <div className="container-fluid">
             <div className="row">
                 <div className="col-md-12"> 
-                <img src="/Images/destinations/Coimbatore-banner.jpg" alt="" title=""/> 
+                <img src={destinationBanner?destinationBanner:"/Images/destinations/Coimbatore-banner.jpg"} alt="" title=""/> 
                 </div>
             </div>
             </div>
@@ -219,7 +221,7 @@ const Destination = (response) => {
                                                 <div className="hotel-box2-footer">
                                                 <ul>
                                                     <li><img src="/Images/hotels/icons/Couple.png" alt="" title=""/>Couple Friendly</li>
-                                                    <li>Free Cancellation till 12 Dec 2021</li>
+                                                    <li>Free Cancellation  available</li>
                                                 </ul>
                                                 </div>
                                             </div>

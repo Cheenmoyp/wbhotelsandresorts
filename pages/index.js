@@ -240,44 +240,54 @@ const destinationResponsive = {
 				  responsive={destinationResponsive}>
           <div className="post-slide">
             <div className="box-3">
-              <figure><img src="/Images/destinations/Coimbatore.jpg" alt="" title="" /></figure>
+              <figure><img src="/Images/destinations/Vadodara.jpg" alt="" title="" /></figure>
               <div className="content">
-                <h4><a href={'/destination/'+ base64_encode('coimbatore')}>Coimbatore</a></h4>
+                <h4><a href={'/destination/VmFkb2RhcmE='}>Vadodara</a></h4>
               </div>
             </div>
           </div>
           <div className="post-slide">
             <div className="box-3">
-              <figure><img src="/Images/destinations/Erode.jpg" alt="" title="" /></figure>
+              <figure><img src="/Images/destinations/Varanasi.jpg" alt="" title="" /></figure>
               <div className="content">
-                <h4><a href={'/destination/'+ base64_encode('erode')}>Erode</a></h4>
+                <h4><a href={'/destination/VmFyYW5hc2k='}>Varanasi</a></h4>
               </div>
             </div>
           </div>
 		  <div className="post-slide">
             <div className="box-3">
-              <figure><img src="/Images/destinations/Krishnagiri.jpg" alt="" title="" /></figure>
+              <figure><img src="/Images/destinations/Samastipur.jpg" alt="" title="" /></figure>
               <div className="content">
-                <h4><a href={'/destination/'+ base64_encode('krishnagiri')}>Krishnagiri</a></h4>
+                <h4><a href={'/destination/U2FtYXN0aXB1cg=='}>Samastipur</a></h4>
               </div>
             </div>
           </div>
 		  <div className="post-slide">
             <div className="box-3">
-              <figure><img src="/Images/destinations/Munnar.jpg" alt="" title="" /></figure>
+              <figure><img src="/Images/destinations/Ranchi.jpg" alt="" title="" /></figure>
               <div className="content">
-                <h4><a href={'/destination/'+ base64_encode('munnar')}>Munnar</a></h4>
+                <h4><a href={'/destination/UmFuY2hp'}>Ranchi</a></h4>
               </div>
             </div>
           </div>
           <div className="post-slide">
             <div className="box-3">
-              <figure><img src="/Images/destinations/Yercaud.jpg" alt="" title="" /></figure>
+              <figure><img src="/Images/destinations/New-Delhi.jpg" alt="" title="" /></figure>
               <div className="content">
-                <h4><a href={'/destination/'+ base64_encode('yercaud')}>Yercaud</a></h4>
+                <h4><a href={'/destination/TmV3IERlbGhp'}>New-Delhi</a></h4>
               </div>
             </div>
           </div>
+		  
+		   <div className="post-slide">
+            <div className="box-3">
+              <figure><img src="/Images/destinations/Madhubani.jpg" alt="" title="" /></figure>
+              <div className="content">
+                <h4><a href={'/destination/TWFkaHViYW5p'}>Madhubani</a></h4>
+              </div>
+            </div>
+          </div>
+		  
           </Carousel>
         </div>
       </div>

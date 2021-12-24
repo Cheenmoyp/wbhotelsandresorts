@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
 import axios from 'axios';
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
+ 
 
 const Package = () => {
 
@@ -13,31 +13,69 @@ const Package = () => {
         <>
             <Header></Header>
             <div className="inner-page-wrapper">
-            
+							 <h3  className="heading1 awardshead">Awards</h3>
 					 	 <div className="footer-top">
-    <div className="container">
-      <div className="row">
-		    <div className="col-md-4">
-				<div className="widget border-0">
-					<h5 className="m-b30">CONTACT US</h5>
-					<p>
-						A-007, Kanakia Boomerang, Chandivali,
-						Mumbai – 400072, India
-						Tel No: 08048036907
-						Email: reservations@wbhotels.in
-					</p>
+    <div className="container awardsbox">
 					
-					
-				</div>
-				
-			 </div>
-			 <div className="col-md-8">
-			 
-			 
-			 
-			 </div>
-         
-				</div>
+	
+	
+					<div className="row">
+						<div className="col-md-4">
+								<img src="../Images/awards/mint-award-1024x724.jpg" alt="" title=""/>
+						
+						</div>
+						<div className="col-md-4">		
+ 						
+							<img src="../Images/awards/page-1.jpg" alt="" title=""/>
+					 
+						</div>
+						
+						
+						<div className="col-md-4">
+							<img src="../Images/awards/realistic.jpg" alt="" title=""/>
+						
+						</div>
+						<div className="col-md-4">			 
+							<img src="../Images/awards/tempsnip.jpg" alt="" title=""/>
+					 
+						</div>
+						
+						
+						<div className="col-md-4">
+								
+								<img src="../Images/awards/paper.jpg" alt="" title=""/>
+						
+						</div>
+						<div className="col-md-4">			 
+							<img src="../Images/awards/wb.jpg" alt="" title=""/>
+					 
+						</div>
+												
+						<div className="col-md-4">
+								<img src="../Images/awards/cert.jpg" alt="" title=""/>
+						
+						</div>
+						<div className="col-md-4">			 
+					 
+								<img src="../Images/awards/wb2.jpg" alt="" title=""/>
+						</div>
+						
+						
+						<div className="col-md-4">
+								<img src="../Images/awards/wb3.jpg" alt="" title=""/>
+						
+						</div>
+						<div className="col-md-4">			 
+					 
+							<img src="../Images/awards/Chandan2.jpg" alt="" title=""/>
+						</div>
+						
+						<div className="col-md-4">			 
+					 
+							<img src="../Images/awards/Chandan.jpg" alt="" title=""/>
+						</div>
+				 
+					</div>
 			  </div>
 			</div>
 		  </div>

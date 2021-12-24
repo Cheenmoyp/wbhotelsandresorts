@@ -4,11 +4,51 @@ import Image from 'next/image';
 import {decode as base64_decode, encode as base64_encode} from 'base-64';
 import Modal from "react-bootstrap/Modal";
 import axios from 'axios';
-
 export const Header = () => {
     const [loginmodal, setLoginmodal] = useState(false);
+    const [showNavbar, setShowNavbar] = useState('');
+    const [showDestinationNav, setShowDestinationNav] = useState('');
+    const [showHotelNav, setShowHotelNav] = useState('');
+    const [showAboutUsNav, setShowAboutUsNav] = useState('');
 	const handleLoginBoxClick = () => {
         setLoginmodal(!loginmodal);
+    }
+	const handleNavBar = () => {
+		if (showNavbar) {
+			setShowNavbar('');
+		} else {
+			setShowNavbar('show');
+		}
+        
+    }
+	const handleDestinationNav = () => {
+		if (showDestinationNav) {
+			setShowDestinationNav('');
+		} else {
+			setShowDestinationNav('show');
+			setShowHotelNav('');
+			setShowAboutUsNav('');
+		}
+	}
+	const handleHotelNav = () => {
+		if (showHotelNav) {
+			setShowHotelNav('');
+		} else {
+			setShowHotelNav('show');
+			setShowDestinationNav('');
+			setShowAboutUsNav('');
+		}
+        
+    }
+	const handleAboutUsNav = () => {
+		if (showAboutUsNav) {
+			setShowAboutUsNav('');
+		} else {
+			setShowAboutUsNav('show');
+			setShowHotelNav('');
+			setShowDestinationNav('');
+		}
+        
     }
 	//package list
     const [destinationList, setDestinatioList] = useState([]);
@@ -35,11 +75,12 @@ export const Header = () => {
             <div className="col-md-7">
                 <div className="nav-con">
                 <nav className="navbar navbar-expand-lg navbar-dark">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span className="navbar-toggler-icon"></span> </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" onClick={() => handleNavBar()} data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span className="navbar-toggler-icon"></span> </button>
+                    <div className={'collapse navbar-collapse '+showNavbar} id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Destination </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li className="nav-item dropdown"> 
+						<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" onClick={() => handleDestinationNav()} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Destination </a>
+                        <div className={'dropdown-menu '+showDestinationNav} aria-labelledby="navbarDropdown">
                             <div className="container">
                             <div className="row">
                                 <div className="col-md-12"> 
@@ -62,8 +103,9 @@ export const Header = () => {
                             </div>
                         </div>
                         </li>
-                        <li className="nav-item dropdown"> <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotels </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li className="nav-item dropdown"> 
+						<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" onClick={() => handleHotelNav()} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotels </a>
+                        <div className={'dropdown-menu '+showHotelNav} aria-labelledby="navbarDropdown">
                             <div className="container">
                             <div className="row">
                                 <div className="col-md-4"> 
@@ -103,7 +145,10 @@ export const Header = () => {
                             
                         </div>
                         </li>
-						 
+                       <li className="nav-item"> <a className="nav-link active" href={'/meet-our-team'}>About Us </a></li>
+						<li className="nav-item"> <a className="nav-link active" href={'/awards'}>Awards </a></li>
+						
+						<li className="nav-item"> <a className="nav-link active"   target="_blank" href="https://wbhotelsin.wordpress.com/" >Blog </a></li>
 							
 							
 					
@@ -118,6 +163,7 @@ export const Header = () => {
             <div className="col-md-3">
                 <div className="top-btn-group">   <a href="contact-us" className="join-us">  Contact us</a> </div>
             </div>
+			
             </div>
 			
 			

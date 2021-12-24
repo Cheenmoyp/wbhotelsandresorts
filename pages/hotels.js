@@ -51,7 +51,7 @@ const Hotel = () => {
                     <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                        <h2>Luxury Resorts Around Bangalore - Upto 70% Off</h2>
+                     
                         </div>
                     </div>
                     </div>
@@ -187,7 +187,7 @@ const Hotel = () => {
                                                 <div className="hotel-box2-footer">
                                                 <ul>
                                                     <li><img src="/Images/hotels/icons/Couple.png" alt="" title=""/>Couple Friendly</li>
-                                                    <li>Free Cancellation till 12 Dec 2021</li>
+                                                    <li>Free Cancellation available</li>
                                                 </ul>
                                                 </div>
                                             </div>
