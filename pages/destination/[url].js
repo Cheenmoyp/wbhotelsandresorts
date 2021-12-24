@@ -138,7 +138,7 @@ const Destination = (response) => {
                                     <span>50</span></li>
                                 </ul>
                             </div>
-                            <div className="filter-list-con">
+                            {/* <div className="filter-list-con">
                                 <h4>Star Ratings</h4>
                                 <ul>
                                 <li>
@@ -162,7 +162,7 @@ const Destination = (response) => {
                                     <label htmlFor="star_rating">5 Star</label>
                                     <span>80</span></li>
                                 </ul>
-                            </div>
+                            </div> */}
                             </div>
                         </div>
                         </div>
@@ -229,7 +229,7 @@ const Destination = (response) => {
                                         <div className="col-md-3 hotel-box2-right">
                                             <ul className="rating">
                                             <li> </li>
-                                            <li><span className="cut-price">₹4300</span>₹{slide.original_price}</li>
+                                            {/* <li><span className="cut-price">₹4300</span>₹{slide.original_price}</li> */}
                                             
                                             <li> <a href={'../hotel-details/'+ base64_encode(slide.hotel_id)} className="book-now-btn-destinationsearch">Book Now</a></li>
                                             </ul>

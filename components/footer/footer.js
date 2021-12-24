@@ -15,11 +15,12 @@ export const Footer = () => {
 			<div className="copyright">
 				<div className="left">© 2021 WB Hotels & Resorts.   </div>
 				<div className="right">
+         
 					<ul>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Sitemap</a></li>
-						<li><a href="#">Company details</a></li>
+						<li><a href="https://www.facebook.com/westbridgehotels/"><img src="../Images/facebook.png" alt="" title=""/></a></li>
+						<li><a href="#"><img src="../Images/twitter.png" alt="" title=""/></a></li>
+						<li><a href="#"><img src="../Images/tripadvisor.png" alt="" title=""/></a></li>
+						<li><a href="https://www.linkedin.com/company/68018352/admin/"><img src="../Images/linkedin.png" alt="" title=""/></a></li>
 					</ul>
 				</div>
 			</div>
