@@ -264,13 +264,17 @@ color: #f9ad09;
     position: absolute;
     top: 98%;
     left: 0;
-    width: 100%;
+    width: auto;
     transform: translateY(-2em);
     z-index: -1;
     transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
     display: inline-block;
     border-radius: 0;
 }
+
+
+ 
+
    /* shows the dropdown menu on hover */
 .nav-con .navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
     visibility: visible;
@@ -6047,3 +6051,6 @@ a.book-now2 {
 
 .menublocks li{float:left!important; width:20%; list-style-type:none;}
 .menublocks li a{float:left!important; width:20%; list-style-type:none;}
+
+
+.profiles img{ width:230px; height:250px;}

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.18",
     "@tabler/icons": "^1.48.0",
     "axios": "^0.24.0",
     "base-64": "^1.0.0",
@@ -26,6 +27,7 @@
     "react-owl-carousel": "^2.3.3",
     "react-player": "^2.9.0",
     "react-star-ratings": "^2.3.0",
+    "react-tabs": "^3.2.3",
     "simple-react-lightbox": "^3.6.9-0",
     "swr": "^1.0.1"
   },

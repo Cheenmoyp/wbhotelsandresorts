@@ -12,15 +12,18 @@ export const Header = () => {
     }
 	//package list
     const [destinationList, setDestinatioList] = useState([]);
-     const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-destination-list/2533/ALL`).then(response => {
-        return response.data;
-    })
-    .catch(error => {
-        console.log('error', error);
-    });
-    fetcher.then(response => {
-        setDestinatioList(response.destinations)  
-    }) 
+	if (!destinationList.length) {
+		const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-destination-list/2533/ALL`).then(response => {
+			return response.data;
+		})
+		.catch(error => {
+			console.log('error', error);
+		});
+		fetcher.then(response => {
+			setDestinatioList(response.destinations)  
+		}) 
+	}
+     
     return (
         < >
 		 <div className="headbar">
@@ -42,8 +45,8 @@ export const Header = () => {
                                 <div className="col-md-12"> 
                                 <span className="menu-heading">All Destinations</span> 
                                 <ul className="  menublocks">
-                                    {destinationList.map((destination, index) => {
-                                        console.log(destination);
+                                    {destinationList && destinationList.map((destination, index) => {
+                                        
                                         return (
                                             <li  key={index}> <a className="nav-link active" href={'/destination/'+ base64_encode(destination)} >{destination}</a></li>
                                            
@@ -100,6 +103,11 @@ export const Header = () => {
                             
                         </div>
                         </li>
+						 
+							
+							
+					
+							 
                         
                       
                     </ul>
