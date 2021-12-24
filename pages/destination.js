@@ -215,7 +215,7 @@ const Destination = () => {
                         </div>
                         <div className="amenities">
                         <ul>
-                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>ROMT Safe</li>
+                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>WB Safe</li>
                             <li><span><img src="/Images/packages/icons/free-wifi.png" alt="" title=""/></span>Free WIFI</li>
                             <li><span><img src="/Images/packages/icons/Housekeeping.png" alt="" title=""/></span>Hosekeeping</li>
                             <li><a href="#">+More</a></li>
@@ -259,7 +259,7 @@ const Destination = () => {
                         </div>
                         <div className="amenities">
                         <ul>
-                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>ROMT Safe</li>
+                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>WB Safe</li>
                             <li><span><img src="/Images/packages/icons/free-wifi.png" alt="" title=""/></span>Free WIFI</li>
                             <li><span><img src="/Images/packages/icons/Housekeeping.png" alt="" title=""/></span>Hosekeeping</li>
                             <li><a href="#">+More</a></li>
@@ -304,7 +304,7 @@ const Destination = () => {
                         </div>
                         <div className="amenities">
                         <ul>
-                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>ROMT Safe</li>
+                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>WB Safe</li>
                             <li><span><img src="/Images/packages/icons/free-wifi.png" alt="" title=""/></span>Free WIFI</li>
                             <li><span><img src="/Images/packages/icons/Housekeeping.png" alt="" title=""/></span>Hosekeeping</li>
                             <li><a href="#">+More</a></li>

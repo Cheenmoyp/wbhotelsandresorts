@@ -31,7 +31,7 @@ const PackageDetail = () => {
                                 <div className="package-detail-block-body">
                                 <ul>
                                     <li><span><img src="/Images/packages/icons/MobileVoucher.png" alt="" title="" /></span>Mobile Voucher</li>
-                                    <li><span><img src="/Images/packages/icons/Safe.png" alt="" title="" /></span>ROMT Safe</li>
+                                    <li><span><img src="/Images/packages/icons/Safe.png" alt="" title="" /></span>WB Safe</li>
                                     <li><span><img src="/Images/packages/icons/Swimming.png" alt="" title="" /></span>Swimming Plll</li>
                                     <li><span><img src="/Images/packages/icons/JeepSafari.png" alt="" title="" /></span>Jeep Safari</li>
                                     <li><span><img src="/Images/packages/icons/Camp-Fire.png" alt="" title="" /></span>Camp Fire</li>
