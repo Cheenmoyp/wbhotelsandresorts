@@ -72,7 +72,7 @@ const Package = () => {
 						
 						<div className="col-md-4">			 
 					 
-							<img src="../Images/awards/Chandan.jpg" alt="" title=""/>
+							<img src="../Images/awards/chandan.jpg" alt="" title=""/>
 						</div>
 				 
 					</div>
