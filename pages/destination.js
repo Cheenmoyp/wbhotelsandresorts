@@ -222,10 +222,7 @@ const Destination = () => {
                         </ul>
                         </div>
                         <div className="hotel-box2-footer">
-                        <ul>
-                            <li><img src="/Images/hotels/icons/Couple.png" alt="" title=""/>Couple Friendly</li>
-                            <li>Free Cancellation available</li>
-                        </ul>
+                        
                         </div>
                     </div>
                     
@@ -266,10 +263,7 @@ const Destination = () => {
                         </ul>
                         </div>
                         <div className="hotel-box2-footer">
-                        <ul>
-                            <li><img src="/Images/hotels/icons/Couple.png" alt="" title=""/>Couple Friendly</li>
-                            <li>Free Cancellation available</li>
-                        </ul>
+                        
                         </div>
                     </div>
                     
@@ -311,10 +305,7 @@ const Destination = () => {
                         </ul>
                         </div>
                         <div className="hotel-box2-footer">
-                        <ul>
-                            <li><img src="/Images/hotels/icons/Couple.png" alt="" title=""/>Couple Friendly</li>
-                            <li>Free Cancellation available</li>
-                        </ul>
+                       
                         </div>
                     </div>
                     
