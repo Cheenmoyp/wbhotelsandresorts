@@ -157,7 +157,9 @@ export default function Rooms(props) {
                                                 return (
                                                     <li key={index4}>
                                                         <div className="row">
-                                                            <div className="col-4"><h5>{rateplan.plan_name}</h5></div>
+                                                            <div className="col-4">
+                                                                <h5>{rateplan.plan_name}</h5>
+                                                            </div>
                                                             <div className="col-4">
                                                                 <div className="price">
                                                                     <h6>₹ {rateplan.bar_price}</h6>
@@ -165,15 +167,10 @@ export default function Rooms(props) {
                                                                     <p>Excluding GST</p>
                                                                 </div>
                                                             </div>
-                                                             
-
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </li>
-                                                )
+                                                );
                                             })}
-                                            
                                         </ul>
                                     </div>
                                     <div className=" room-box-footer">

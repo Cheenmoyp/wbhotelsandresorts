@@ -148,6 +148,33 @@ const Package = () => {
 				</div>
 				
 				
+				<div className="row teamcard">
+					<div className="col-md-3"><img src="../Images/profile/karuna.jpg" alt="" title=""/></div>
+					<div className="col-md-9">
+						<h2>KARUNA BAJAJ | Corporate Director – House Keeping</h2>
+						<p>
+						 An Excellent Corporate housekeeper with immense knowledge, perfection, and eyes for details. Karuna has more than 37 years’ experience in the field of Housekeeping with International exposures. Started with ITC Hotels moved to Hyatt, Sheraton, DLF , The Orchid. .She maintained very high standards of housekeeping operations also has varied experience in pre-opening, procurement, rooms management system, renovations ,Pre opening .
+						 
+						 </p>
+
+					
+					</div>
+				</div>
+				
+				<div className="row teamcard">
+					<div className="col-md-3"><img src="../Images/profile/neil.jpg" alt="" title=""/></div>
+					<div className="col-md-9">
+						<h2>NEIL VAZ | Corporate Trainer</h2>
+						<p>
+						An innovative people focused corporate trainer and consultant, with experience of 32 years (sales 12 years and training 20 years) covers a wide gamut of areas spread across sales, channel management, training and people development. List of clients – Kohinoor Group, Le Méridien, Radisson Blu, Double Tree by Hilton, Sarovar, IBIS, KEYS, The Club, Sterling Holidays, RAMADA, Zénith Computers, RP Tech, Learning Mâte, Dow Corning, Ashland, CASTROL, Grasim Inds, Narmada Phosphate, WABAG, Nalco, RR Global, DB Power, A’KREATIONS, Cox & Kings,
+						
+						 </p>
+
+					
+					</div>
+				</div>
+				
+				
 				
 				
 				

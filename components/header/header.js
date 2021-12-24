@@ -148,7 +148,7 @@ export const Header = () => {
                        <li className="nav-item"> <a className="nav-link active" href={'/meet-our-team'}>About Us </a></li>
 						<li className="nav-item"> <a className="nav-link active" href={'/awards'}>Awards </a></li>
 						
-						<li className="nav-item"> <a className="nav-link active"   target="_blank" href="https://wbhotelsin.wordpress.com/" >Blog </a></li>
+						<li className="nav-item"> <a className="nav-link active"   href="https://wbhotelsin.wordpress.com/"    >Blog </a></li>
 							
 							
 					
