@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 // import OwlCarousel from 'react-owl-carousel';
+import Link from 'next/link';
 import Image from 'next/image';
 import {decode as base64_decode, encode as base64_encode} from 'base-64';
 import Modal from "react-bootstrap/Modal";
@@ -161,7 +162,7 @@ export const Header = () => {
                 </div>
             </div>
             <div className="col-md-3">
-                <div className="top-btn-group">   <a href="contact-us" className="join-us">  Contact us</a> </div>
+                <div className="top-btn-group">   <Link  href="/contact-us" ><a className="join-us">  Contact us</a></Link> </div>
             </div>
 			
             </div>

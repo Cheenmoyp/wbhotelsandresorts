@@ -115,6 +115,8 @@ const destinationResponsive = {
 		  }}}}
           width='100%'
           height='100%'
+		  position='absolute'
+		  top='-122px'
         />
   <div className="slider-caption">
       <div className="container">
@@ -295,119 +297,7 @@ const destinationResponsive = {
   </div>
 </div>
 
-<div className="testimonial-section">
-  <div className="container">
-    <div className="row">
-      <div className="col-md-12">
-        <h2 className="heading1">What Our Client Says</h2>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col-md-12"> 
-		<div className="testimonial-video">
-			<div>
-  <div>
-    <Carousel swipeable={true}
-				  draggable={true}
-				  infinite={true}
-				  responsive={testimonialResponsive}>
-        <div style={{padding: '10px'}} className="clientbox">
-				 <figure><img src="/Images/client.png" alt="" title="" /></figure>
-					<h4>Yercud, Munar Mysore</h4>
-                <div className="content">
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
-                </div>
-				<h5>Name</h5>
-		
-		</div>
-        
-        <div style={{padding: '10px'}} className="clientbox">
-							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
-					<h4>Yercud, Munar Mysore</h4>
-                <div className="content">
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
-                </div>
-				<h5>Name</h5>
-
-	   </div>
-        
-        <div style={{padding: '10px'}} className="clientbox">
-							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
-					<h4>Yercud, Munar Mysore</h4>
-                <div className="content">
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
-                </div>
-				<h5>Name</h5>
-	  </div>
-        
-        <div style={{padding: '10px'}} className="clientbox">
-							 <figure><img src="/Images/client.png" alt="" title="" /></figure>
-					<h4>Yercud, Munar Mysore</h4>
-                <div className="content">
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
-                </div>
-				<h5>Name</h5>
-		 
-	  </div>
-    </Carousel>    
-  </div>
-</div>
-		</div>
-	  </div>
-      {/* <div className="col-md-6">
-        <div className="testimonial-right">
-          <div id="Testimonial" className="testimonial" >
-          <Carousel swipeable={true}
-				  draggable={true}
-				  infinite={true}
-				  responsive={testimonialResponsive}>
-	            <div className="post-slide">
-	              <div className="testimonial-box">
-	                <figure><img src="/Images/client.jpg" alt="" title="" /></figure>
-					<h4>Yercud, Munar Mysore</h4>
-	                <div className="content">
-						<p>1There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable.</p>
-	                </div>
-					<h5>Name</h5>
-	              </div>
-	            </div>
-	            <div className="post-slide">
-	              <div className="testimonial-box">
-	                <figure><img src="/Images/client.jpg" alt="" title="" /></figure>
-					<h4>Yercud, Munar Mysore</h4>
-	                <div className="content">
-						<p>2There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable.</p>
-	                </div>
-					<h5>Name</h5>
-	              </div>
-	            </div>
-	            <div className="post-slide">
-	              <div className="testimonial-box">
-	                <figure><img src="/Images/client.jpg" alt="" title="" /></figure>
-					<h4>Yercud, Munar Mysore</h4>
-	                <div className="content">
-						<p>3There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable.</p>
-	                </div>
-					<h5>Name</h5>
-	              </div>
-	            </div>
-	            <div className="post-slide">
-	              <div className="testimonial-box">
-	                <figure><img src="/Images/client.jpg" alt="" title="" /></figure>
-					<h4>Yercud, Munar Mysore</h4>
-	                <div className="content">
-						<p>4There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable.</p>
-	                </div>
-					<h5>Name</h5>
-	              </div>
-	            </div>
-            </Carousel>
-          </div>
-        </div>
-      </div> */}
-    </div>
-  </div>
-</div>
+ 
 
 <Footer></Footer>
     </>
