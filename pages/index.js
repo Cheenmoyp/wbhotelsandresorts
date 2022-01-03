@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Image from 'next/image';
 import { Header } from '../components/header/header';
 import { Footer } from '../components/footer/footer';
@@ -23,7 +23,21 @@ export default function Home() {
       });
   
   const [ourHotelData, setOurHotelData] = useState([])
-  const [searchData, setSearchData] = useState()
+  const [searchData, setSearchData] = useState();
+  
+	const [scrollval, setScrollval] = useState('')
+
+	useEffect(() => {
+		document.addEventListener("scroll", () => {
+			const scrollCheck = window.scrollY > 500
+			console.log('scroll', window.scrollY);
+			if (scrollCheck) {
+				setScrollval('shrink')
+			} else {
+				setScrollval('')
+			}
+		})
+	})
 
   fetcher.then(response => {
     if(ourHotelData.length == 0 ) {
@@ -129,42 +143,11 @@ const destinationResponsive = {
         </div>
       </div>
 	  <div className="search-categories">
-              <ul>
-                <li> 
-					<a href="#" className="category"> 
-						<span className="icon"><img src="/Images/icons/wifi.png" alt="" title="" /></span>	
-						<p className="det">Free WiFi</p>
-					</a> 
-				</li>
-                <li> 
-					<a href="#" className="category">
-						<span className="icon"><img src="/Images/icons/AvailableRooms.png" alt="" title="" /></span>
-						<p className="det">Available Rooms</p>
-					</a> 
-				</li>
-                <li> 
-					<a href="#" className="category"> 
-						<span className="icon"><img src="/Images/icons/24x7.png" alt="" title="" /></span>
-						<p>24x7 </p>
-					</a> 
-				</li>
-                <li> 
-				  <a href="#" className="category"> 
-					<span className="icon"><img src="/Images/icons/offers.png" alt="" title="" /></span>
-					<p>Offers</p>
-                  </a> 
-				</li>
-				  <li> 
-					<a href="#" className="category"> 
-						<span className="icon"><img src="/Images/icons/awards-white.png" alt="" title="" /></span>
-						<p>Awards</p>
-					</a> 
-				</li>
-              </ul>
+              
             </div>
     </div>
 </div>
-<div className="search-con">
+<div className={`search-con ${scrollval}`}>
       <div className="container">
         <div className="row">
           <div className="col-md-10">
@@ -187,41 +170,43 @@ const destinationResponsive = {
       </div>
     </div>
     <div className="row">
-    {ourHotelData.map((slide, index)=>{
-      return (
-          <div className={index == 1 || index == 4?  "col-md-6" : "col-md-3"} key={index}> 
-         
-          <div className={ index == 3 || index == 5 ? "box-2 mtop-60":"box-2" }>
-            <figure><a href={'hotel-details/'+ base64_encode(slide.hotel_id) }><img className={ index == 0 || index == 2 || index == 5? "height-237": index == 3 ? "height-360":"height-300" } src={slide.image} alt={slide.hotel_name} title={slide.hotel_name} /></a></figure>
-            <div className="content">
-              <h3><a href={'hotel-details/'+ base64_encode(slide.hotel_id) }>{slide.hotel_name} </a></h3>
-              <div className="hotel-footer">
-                <div className="row">
-                  <div className="col-6 text-left">
-                    <div className="rating">
-                    <StarRatings
-                      rating={slide.star}
-                      starRatedColor="orange"
-                      numberOfStars={5}
-                      name='rating'
-                      starDimension="15px"
-                      starSpacing="1px"
-                    />
+    {ourHotelData && 
+       ourHotelData.map((slide, index)=>{
+        return (
+            <div className={index == 1 || index == 4?  "col-md-6" : "col-md-3"} key={index}> 
+           
+            <div className={ index == 3 || index == 5 ? "box-2 mtop-60":"box-2" }>
+              <figure><a href={'hotel-details/'+ base64_encode(slide.hotel_id) }><img className={ index == 0 || index == 2 || index == 5? "height-237": index == 3 ? "height-360":"height-300" } src={slide.image} alt={slide.hotel_name} title={slide.hotel_name} /></a></figure>
+              <div className="content">
+                <h3><a href={'hotel-details/'+ base64_encode(slide.hotel_id) }>{slide.hotel_name} </a></h3>
+                <div className="hotel-footer">
+                  <div className="row">
+                    <div className="col-6 text-left">
+                      <div className="rating">
+                      <StarRatings
+                        rating={slide.star}
+                        starRatedColor="orange"
+                        numberOfStars={5}
+                        name='rating'
+                        starDimension="15px"
+                        starSpacing="1px"
+                      />
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-6 text-right">
-                    <div className="price"> <i className="fa fa-inr" aria-hidden="true"></i> {slide.starting_price} </div>
+                    <div className="col-6 text-right">
+                      <div className="price"> <i className="fa fa-inr" aria-hidden="true"></i> {slide.starting_price} </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-			<div>
-			{ index == 5 ? (<div className="box-2 btn-bx box-bx"> <a href="hotels">Explore all Hotels</a> </div>):'' }
-			</div>
+        <div>
+        { index == 5 ? (<div className="box-2 btn-bx box-bx"> <a href="hotels">Explore all Hotels</a> </div>):'' }
         </div>
-      )
-     })}
+          </div>
+        )
+       })
+      }
     </div>
   </div>
 </div>

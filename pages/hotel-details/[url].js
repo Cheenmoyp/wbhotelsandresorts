@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react'; 
 import Image from 'next/image';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
@@ -44,12 +44,26 @@ const HotelDetails = (response) => {
 	    var url = "https://wbhotels.bookingjini.com";
 	    var be_url = url+'/property/?q='+q;
 		console.log('response.hoteldata.allImages',response.hoteldata);
+		
+		const [scrollval, setScrollval] = useState('')
+
+	useEffect(() => {
+		document.addEventListener("scroll", () => {
+			const scrollCheck = window.scrollY > 150
+			console.log('scroll', window.scrollY);
+			if (scrollCheck) {
+				setScrollval('shrink')
+			} else {
+				setScrollval('')
+			}
+		})
+	})
   return (
     <>
     <Header></Header>
     <div className="inner-page-wrapper">
       <div className="inner-page-search-con">
-        <div className="search-con">
+        <div className={`search-con ${scrollval}`}> 
           <div className="container">
             <div className="row">
               <div className="col-md-12">

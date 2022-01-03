@@ -86,7 +86,7 @@ export const Header = () => {
                             <div className="row">
                                 <div className="col-md-12"> 
                                 <span className="menu-heading">All Destinations</span> 
-                                <ul className="  menublocks">
+                                <ul className="menublocks">
                                     {destinationList && destinationList.map((destination, index) => {
                                         
                                         return (

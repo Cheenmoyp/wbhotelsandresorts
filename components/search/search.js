@@ -80,7 +80,7 @@ export default function Search(props) {
 		<>
         <form>
             <div className="form-control">
-                <input type="text" placeholder="What are you looking for?" 
+                <input type="text" placeholder="Search Hotels" 
                 value = {formData.cityname?formData.cityname:props && props.cityname}
 				onKeyUp={(event) => { handleKeyUp(event)}}
                 onChange={(event) => {
