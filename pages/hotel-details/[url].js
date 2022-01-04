@@ -15,6 +15,7 @@ const HotelDetails = (response) => {
 	const handleLightBoxClick = () => {
         setLightboxmodal(!lightboxmodal);
     }
+    console.log('response',response);
 	const responsive = {
 	  superLargeDesktop: {
 		// the naming can be any, depends on you.

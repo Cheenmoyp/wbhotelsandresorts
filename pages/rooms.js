@@ -5,6 +5,7 @@ import RoomDetailModal from './roomDetailModal';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Modal from "react-bootstrap/Modal";
+import moment from 'moment';
 
 
 export default function Rooms(props) {
@@ -19,6 +20,15 @@ export default function Rooms(props) {
     const [roomDetails, setRoomDetails] = useState();
 
     const [roomModal, setRoomModal] = useState(true);
+
+    var tomorow_date = new Date();
+	var today_date = new Date();
+	var date_checkin = '';
+	var date_checkout = '';
+	// add a day
+	tomorow_date.setDate(tomorow_date.getDate() + 1);
+    date_checkin = moment(new Date(today_date)).format('DD-MM-YYYY');
+    date_checkout = moment(new Date(tomorow_date)).format('DD-MM-YYYY');
     
     // api-key - 644406a7918f871f3a8568c58e56e77b
     // 1993 - hotel_id
@@ -26,7 +36,7 @@ export default function Rooms(props) {
     // 18-11-2021 - checkout
     // replace this dynamic url 
         // `${process.env.NEXT_PUBLIC_HOST_BE}/bookingEngine/get-inventory/644406a7918f871f3a8568c58e56e77b/${props.search[0]}/${props.search[2]}/${props.search[3]/INR`
-    const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/bookingEngine/get-inventory/${props.api_key}/${props.room_id}/17-11-2021/18-11-2021/INR`).then(response => {
+    const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/bookingEngine/get-inventory/${props.api_key}/${props.room_id}/${date_checkin}/${date_checkout}/INR`).then(response => {
         return response.data.data
       })
       .catch(error => {
@@ -125,7 +135,7 @@ export default function Rooms(props) {
                                         {amenities.map((image, index2)=>{ 
                                             return (   
                                                 <div className="" key={index2}> 
-                                                    <img className="d-block w-100" src={'https://d3ki85qs1zca4t.cloudfront.net/bookingEngine/'+ image.image_name} alt="First slide" /> 
+                                                    <img className="d-block w-100 room-img-height" src={'https://d3ki85qs1zca4t.cloudfront.net/bookingEngine/'+ image.image_name} alt="First slide" /> 
                                                 </div>
                                             )
                                         })}
@@ -176,7 +186,8 @@ export default function Rooms(props) {
                                     <div className=" room-box-footer">
                                     <ul className="row">
                                         <li className="col-6">
-                                           
+                                        <button className='btn btn-info' onClick={() => handleClick(slide.room_type_id, slide.max_people, slide.rack_price, slide.room_type)} id={slide.room_type_id}
+                                            >More Details</button>
                                         </li>
                                         <li className="col-6"><a href={props.be_url}>Book Now</a></li>
                                     </ul>
@@ -238,7 +249,7 @@ export default function Rooms(props) {
             </Modal.Footer>
         </Modal>
 
-        {roomDetailsId &&  <RoomDetailModal id={roomDetailsId} roomModal={roomModal} setRoomModal={setRoomModal} rooms={roomDetails && roomDetails.rooms} adults={roomDetails && roomDetails.adults} age={roomDetails && roomDetails.age} kids={roomDetails && roomDetails.kids} hotelid={hotel_id} checkin={checkin} checkout={checkout}/>}
+        {roomDetailsId &&  <RoomDetailModal id={roomDetailsId} api_key={props.api_key} roomModal={roomModal} setRoomModal={setRoomModal} rooms={roomDetails && roomDetails.rooms} adults={roomDetails && roomDetails.adults} age={roomDetails && roomDetails.age} kids={roomDetails && roomDetails.kids} hotelid={hotel_id} checkin={checkin} checkout={checkout}/>}
        
         </>
     )

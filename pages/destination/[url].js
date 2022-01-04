@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
@@ -14,6 +14,19 @@ const Destination = (response) => {
     const [startRating, setStarRating] = useState();
     const [destinationBanner, setDestinationBanner] = useState('');
     const [expanded, setExpanded] = useState(false);
+  
+	const [scrollval, setScrollval] = useState('');
+	useEffect(() => {
+		document.addEventListener("scroll", () => {
+			const scrollCheck = window.scrollY > 500
+			console.log('scroll', window.scrollY);
+			if (scrollCheck) {
+				setScrollval('shrink')
+			} else {
+				setScrollval('')
+			}
+		})
+	})
     let hotel_name = [];
 
     const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter?group_id=2533&city_name=${response.city}&star_rating=${startRating}&min_price&max_price`).then(response => {
@@ -49,7 +62,7 @@ const Destination = (response) => {
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                 <h2>{hotelList.length > 0 && hotelList[0]['city_name']}</h2>
-                <h3>{hotelList.length > 0 && hotelList.length} Hotels </h3>
+                <h3>{hotelList.length > 0 ? hotelList.length+ ' Hotels' : ''}  </h3>
 				<div>
 					<p className={`desti-content ${toggledClass}`}>
 						<div
@@ -70,13 +83,13 @@ const Destination = (response) => {
             <div className="container-fluid">
             <div className="row">
                 <div className="col-md-12"> 
-                <img src={destinationBanner?destinationBanner:"/Images/destinations/Coimbatore-banner.jpg"} alt="" title=""/> 
+                <img src={destinationBanner?destinationBanner:""} alt="" title=""/> 
                 </div>
             </div>
             </div>
         </div>
         <div className="inner-page-search-con">
-            <div className="search-con">
+            <div className={`search-con ${scrollval}`}>
             <div className="container">
                 <div className="row">
                 <div className="col-md-12">
@@ -199,7 +212,7 @@ const Destination = (response) => {
                                                 </div>
                                                 <h3><a href={'../hotel-details/'+ base64_encode(slide.hotel_id)}>{slide.hotel_name}</a></h3>
                                                 <div className="distance">
-                                                <p><span><img src="/Images/hotels/icons/location-icon.png"/></span>{slide.city_name}</p>
+                                                <p><span><img src="/Images/hotels/icons/location-icon.png"/></span>{slide && slide.city_name}</p>
                                                 </div>
                                                 <div className="content">
 													<p>
@@ -258,18 +271,24 @@ const Destination = (response) => {
 // This gets called on every request
 export async function getServerSideProps(context) {
     
+    var city_code = 0;
+    var city = '';
+    var url_param = '';
     //console.log('helo',base64_decode(context.params.url));return 1;
-    let url_param = base64_decode(context.params.url).split("/");
+    url_param = base64_decode(context.params.url).split("/");
+    city_code = url_param[0];
 	
     // Fetch data from external API
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST_BE}/query/2533/${url_param[0]}`
+        `${process.env.NEXT_PUBLIC_HOST_BE}/query/2533/${city_code}`
     );
 	
-    const response = await res.json();
-    const city = response.hotels_data[0] && response.hotels_data[0].city_name
-
-    if (!response) {
+    if(res) {
+        const response = await res.json();
+        city = response.hotels_data[0] ? response.hotels_data[0].city_name : '';    
+    }
+   
+    if (!res) {
         return {
         notFound: true,
         };

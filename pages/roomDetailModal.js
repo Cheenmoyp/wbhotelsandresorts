@@ -5,6 +5,8 @@ import Modal from "react-bootstrap/Modal";
 import { useRouter } from 'next/router'
 import {decode as base64_decode, encode as base64_encode} from 'base-64';
 import Button from "react-bootstrap/Button";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import {
 	IconBellRinging2,
 	IconX,
@@ -14,9 +16,28 @@ import {
 
 export default function RoomDetailModal(props) {
     console.log('modal', props);
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 1
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 1
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
+      };
     const [roomDetails, setRoomDetails] = useState([]);
     // setModal(true);
-    const fetcherRoomDetails  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/bookingEngine/get-room-info/b8f40b4f2e3d117c167b69aecfcaad10/2881/8249`).then(response => {
+    const fetcherRoomDetails  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/bookingEngine/get-room-info/${props.api_key}/${props.hotelid}/${props.id}`).then(response => {
         return response.data.data
       })
       .catch(error => {
@@ -40,7 +61,7 @@ export default function RoomDetailModal(props) {
         router.push(`../hotel-booking/${url}`);
     }
 
-
+    var images = roomDetails.image ? roomDetails.image:[];
     return (
         <Modal className="modal fade hotel-detailmodal" tabIndex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" show={props.roomModal}>
             {/* <Button variant="close" onClick={() => setModal(!modal)}>
@@ -55,18 +76,20 @@ export default function RoomDetailModal(props) {
                         <div className="room-details-modal-slider">
                             <div id="carouselModal_indicator" className="carousel slide" data-ride="carousel">
                                 <div className="carousel-inner">
-                                    <div className="carousel-item active"> 
-                                    {roomDetails.image && 
-                                        roomDetails.image.map((image, index) => {
-                                            return (
-                                                <li className="col-md-4 col-sm-2" key={index}>
-                                                    <img className="d-block w-100" src={'https://d3ki85qs1zca4t.cloudfront.net/bookingEngine/'+ image.image_name} alt="First slide" width="100%"/> 
-                                                </li>
+                                <Carousel swipeable={true}
+                                    draggable={true}
+                                    infinite={true}
+                                    responsive={responsive}>
+                                        {images && 
+                                        images.map((img, index2)=>{ 
+                                            return (   
+                                                <div className="" key={index2}> 
+                                                    <img className="d-block w-100 room-img-height" src={'https://d3ki85qs1zca4t.cloudfront.net/bookingEngine/'+ img.image_name} alt="First slide" /> 
+                                                </div>
                                             )
-                                        })
-                                    }
-                                        
-                                    </div>
+                                        })}
+                                    </Carousel> 
+                                    
                                 </div>
                             </div>
                         </div>
@@ -79,6 +102,12 @@ export default function RoomDetailModal(props) {
                                 />
                             </p>
                             <h4>Room Ameenities</h4>
+                            <div className="room-dertails">
+                                <ul>
+                                    <li><span><img src="/Images/hotels/icons/sq-ft.png" alt="" title=""/></span>{roomDetails.room_size_value} sq.ft </li>
+                                    <li><span><img src="/Images/hotels/icons/bed.png" alt="" title=""/></span>{roomDetails.bed_type} Bed</li>
+                                </ul>
+                            </div>
                             <ul className="list-4 row">
                                 {roomDetails.room_amenities && 
                                     roomDetails.room_amenities.map((amenities, index) => {
@@ -89,7 +118,7 @@ export default function RoomDetailModal(props) {
                                 }
                             </ul>
                             {/* <a href="../hotel-booking" >Book Now</a>  */}
-                            <button className="book-now" onClick={() => handleBook()}>Book Now</button>
+                            {/* <button className="book-now" onClick={() => handleBook()}>Book Now</button> */}
                         </div>
                     </div>
             </Modal.Body>
