@@ -44,7 +44,7 @@ export default function Search(props) {
 				router.push(`/destination/${url}/`)
 			} else {
 				let url = base64_encode(formData.searchHotelId); 
-				router.push(`hotel-details/${url}`)				
+				router.push(`/hotel-details/${url}`)				
 			}
 		} else {
 			alert('Enter What are you looking for?');
