@@ -8,14 +8,27 @@ export const Footer = () => {
         <footer className="site-footer">
      <>  
 
-  <div className="footer-bottom">
+  <div className="footer-bottom copyright" >
     <div className="container">
       <div className="row">
-        <div className="col-lg-12">
-			<div className="copyright">
-				<div className="left">© 2021 WB Hotels & Resorts.   </div>
-				<div className="right">
-         
+      
+				 <div className="col-lg-6">
+						<div className="left"> 	
+							<ul>
+								<li> © 2021 WB Hotels & Resorts.  </li>
+								<li><a href="/privacy-policy">Privacy Policy</a></li>
+								<li><a href="/terms-and-condition"> Terms & Conditions</a></li>
+						 
+							</ul>
+						</div>
+						
+
+						
+				 
+				 </div>
+				  <div className="col-lg-6">
+						<div className="right">
+						
 					<ul>
 						<li><a href="https://www.facebook.com/westbridgehotels/"><img src="../Images/facebook.png" alt="" title=""/></a></li>
 						<li><a href="#"><img src="../Images/twitter.png" alt="" title=""/></a></li>
@@ -23,9 +36,17 @@ export const Footer = () => {
 						<li><a href="https://www.linkedin.com/company/68018352/admin/"><img src="../Images/linkedin.png" alt="" title=""/></a></li>
 					</ul>
 				</div>
+				  
+				  </div>
+			
+		
+		
+			
+			
+				
 			</div>
-		</div>
-      </div>
+		 
+  
     </div>
   </div> </>
         </footer>

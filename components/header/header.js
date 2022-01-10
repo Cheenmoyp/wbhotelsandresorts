@@ -104,47 +104,9 @@ export const Header = () => {
                             </div>
                         </div>
                         </li>
-                        <li className="nav-item dropdown"> 
-						<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" onClick={() => handleHotelNav()} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotels </a>
-                        <div className={'dropdown-menu '+showHotelNav} aria-labelledby="navbarDropdown">
-                            <div className="container">
-                            <div className="row">
-                                <div className="col-md-4"> 
-                                <span  > </span>
-                                <ul className="nav flex-column">
-                              <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwNw=='}>Aditi Vadodara</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwOA=='}>Manas Dhule</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwOQ=='}>Hotel Singhs</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQxMA=='}>Blue Wheel</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQxMg=='}>Asha Palace </a></li>
-                                </ul>
-                                </div>
-                                <div className="col-md-4">
-                                <span  > </span>
-                                <ul className="nav flex-column">
-                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQwNw=='}>Sehej Inn</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQxOA=='}>West Blue</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQyMQ=='}>Raahi Palace</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQyMw=='}>Sunny </a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQyNA=='}>Amit by WB Hotels </a></li>
-                                </ul>
-                                </div>
-                                
-                                <div className="col-md-4">
-                                <span > </span>
-                                <ul className="nav flex-column">
-                                <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ0Mg=='}>Party Zone</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ0NA=='}>Hotel Siddharth </a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ0Nw=='}>Great Ganga Palace</a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ0OA=='}>Hotel Rabis </a></li>
-                                    <li className="nav-item"> <a className="nav-link active" href={'/hotel-details/MjQ2MA=='}>Madhuyamini </a></li>
-                                </ul>
-                                </div>
-                                
-                            </div>
-                            </div>
-                            
-                        </div>
+                        <li className="nav-item"> 
+						<a className="nav-link active"  href={'/hotels'} id="navbarDropdown"  > Hotels </a>
+                       
                         </li>
                        <li className="nav-item"> <a className="nav-link active" href={'/meet-our-team'}>About Us </a></li>
 						<li className="nav-item"> <a className="nav-link active" href={'/awards'}>Awards </a></li>

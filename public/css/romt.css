@@ -5978,6 +5978,17 @@ h3.heding-btmborder:before {
 
 .copyright .left {
     display: inline-block;
+	width:100%; 
+}
+.copyright .left ul {float:left;}
+.copyright .left ul li {
+    display: inline-block;
+	float:left;
+}
+.copyright .left ul li a {
+    color: #fff;
+    display: inline-block;
+    padding: 0 10px;
 }
 
 .copyright .right {
@@ -6125,3 +6136,13 @@ a.book-now2 {
 .room-img-height {
     height: 175px;
 }
+
+
+.intro {font-size:13px; padding:20px 0px 20px 0px;}
+.intro h2{font-size:15px;}
+
+.intro li{ list-style-type:decimal;}
+.intro ul{ padding:0px 0px 0px 30px;}
+
+.banner_page{width:100%; float:left; background:#ddd; height:200px;}
+.banner_page h3{text-align:center; padding:60px 0px 0px 0px;}
