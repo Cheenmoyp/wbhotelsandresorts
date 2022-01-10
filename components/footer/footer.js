@@ -15,9 +15,9 @@ export const Footer = () => {
 				 <div className="col-lg-6">
 						<div className="left"> 	
 							<ul>
-								<li> © 2021 WB Hotels & Resorts.  </li>
+								<li> © 2022 WB Hotels & Resorts.  </li>
 								<li><a href="/privacy-policy">Privacy Policy</a></li>
-								<li><a href="/terms-and-condition"> Terms & Conditions</a></li>
+								<li><a href="/terms-and-condition"> Terms & Conditions</a></li> 
 						 
 							</ul>
 						</div>

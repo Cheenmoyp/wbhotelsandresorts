@@ -12,7 +12,7 @@ const Package = () => {
         <>
             <Header></Header>
 			 <div className="inner-page-wrapper banner_page">
-				<h3>Terms and Conditions</h3>
+				<h3>Terms and Conditions </h3> 
             </div>
             <div className="inner-page-wrapper">
 			

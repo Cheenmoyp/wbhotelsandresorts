@@ -20,7 +20,7 @@ const Package = () => {
 	<div className="row">
     	<div className="col-md-12 intro">
         	<h2>1. Introduction </h2>
-				<p>We want you to be familiar with  how we collect, use and disclose information. This Privacy Policy describes the  privacy practices of WB Hotels Group (&quot;WB Hotels&quot;, &quot;we&quot;,  &quot;us&quot; and &quot;our&quot;) in connection with the information that we  collect:</p>
+				<p>We want you to  be familiar with  how we collect, use and disclose information. This Privacy Policy describes the  privacy practices of WB Hotels Group (&quot;WB Hotels&quot;, &quot;we&quot;,  &quot;us&quot; and &quot;our&quot;) in connection with the information that we  collect:</p>
 					<ul>
 					  <li>through&nbsp;<a href="https://www.wbhotels.in">https://www.wbhotels.in/</a>&nbsp;operated by us from which  you are accessing this Privacy Policy</li>
 					  <li>when you visit or stay as a guest at one of our properties, or through  other offline modes of communication</li>
