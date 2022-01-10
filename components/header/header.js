@@ -16,7 +16,7 @@ export const Header = () => {
     }
 	const handleNavBar = () => {
 		if (showNavbar) {
-			setShowNavbar('');
+			setShowNavbar(''); 
 		} else {
 			setShowNavbar('show');
 		}

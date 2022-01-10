@@ -20,7 +20,7 @@ const Package = () => {
 	<div className="row">
     	<div className="col-md-12 intro">
         	<h2>1. Introduction </h2>
-				<p>The terms and conditions set out below ("Conditions") apply to your use of this web site and related websites ("Site"), including the use of the information services offered on the Site.
+				<p>The terms and conditions set out below (&quot;Conditions&quot;) apply to your use of this web site and related websites (&quot;Site&quot;), including the use of the information services offered on the Site.
 In accessing and using the Site, you agree to be bound by these Conditions so please carefully read this section before proceeding.
 If you do not accept these Conditions, you must refrain from using the Site.
 These Conditions must be read in conjunction with any other applicable terms and conditions governing the use of the Site.
@@ -31,12 +31,12 @@ These Conditions must be read in conjunction with any other applicable terms and
 			<h2>Conditions </h2>
 			<h4>Site</h4>
 			<p>
-				The Site makes available information relating to hotels and resorts owned or managed WB Hotels , a corporation constituted under the laws of India, and its subsidiaries, controlled entities, affiliates and related parties ( "WB Hotels").
+				The Site makes available information relating to hotels and resorts owned or managed WB Hotels , a corporation constituted under the laws of India, and its subsidiaries, controlled entities, affiliates and related parties ( &quot;WB Hotels&quot;).
 			</p>
 			
 			
 			<h4>Trademarks</h4>
-			<p>The Site contains “WB Hotels” trade and service marks and devices (including the word “WB Hotels”) and other valuable trade or service marks owned by WB Hotels or licensed to WB Hotels to distinguish its services and products. These trade and service marks and related intellectual property are protected from copying and simulation under national and international laws and may not be reproduced or copied without the express prior written consent of WB Hotels.
+			<p>The Site contains &quot;WB Hotels&quot; trade and service marks and devices (including the word &quot;WB Hotels&quot;) and other valuable trade or service marks owned by WB Hotels or licensed to WB Hotels to distinguish its services and products. These trade and service marks and related intellectual property are protected from copying and simulation under national and international laws and may not be reproduced or copied without the express prior written consent of WB Hotels.
 Without limitation, you must not use any of the said trade or service marks:
 </p>
 
@@ -54,7 +54,7 @@ Without limitation, you must not use any of the said trade or service marks:
 			
 			<h2>Copyright</h2>
 			<p>
-				The information, text, graphics, images, sounds, links and all other information and software published or otherwise contained in the Site (“Information”) are either owned exclusively by WB Hotels or licensed by WB Hotels and except as specifically provided in these Conditions may not be copied, distributed, displayed, reproduced or transmitted, in any form or by any means whether electronic, mechanical, photocopying, recording, or otherwise, without the prior written approval of WB Hotels. Without limitation you may not, without such approval from WB Hotels, create derivative works from any part of the Site or commercialise any Information, products or services obtained from any part of the Site. Information procured from a third party may be the subject of copyright owned by that third party.  
+				The information, text, graphics, images, sounds, links and all other information and software published or otherwise contained in the Site (&quot;Information&quot;) are either owned exclusively by WB Hotels or licensed by WB Hotels and except as specifically provided in these Conditions may not be copied, distributed, displayed, reproduced or transmitted, in any form or by any means whether electronic, mechanical, photocopying, recording, or otherwise, without the prior written approval of WB Hotels. Without limitation you may not, without such approval from WB Hotels, create derivative works from any part of the Site or commercialise any Information, products or services obtained from any part of the Site. Information procured from a third party may be the subject of copyright owned by that third party.  
 			</p>
 			
 			 <h2>Your Use</h2>
@@ -78,7 +78,7 @@ This right to use the Information is a license only, not a transfer of title, an
 				  <p>
 				  
 				  You accept that all Information provided on the Site or any other material accessed through the Site including via any Linked Web Site (refer Condition 8) is general information and is not in the nature of advice.
-You also accept that all of the Information is provided on an “as is” basis and to the extent permitted by law, is provided without any warranty, representation or condition of any kind whether express, implied, statutory or otherwise. You assume all responsibility and risk for your use of or reliance upon the Information and the Site or any other material accessed through the Site including via any Linked Web Site.
+You also accept that all of the Information is provided on an &quot;as is&quot; basis and to the extent permitted by law, is provided without any warranty, representation or condition of any kind whether express, implied, statutory or otherwise. You assume all responsibility and risk for your use of or reliance upon the Information and the Site or any other material accessed through the Site including via any Linked Web Site.
 Whilst WB Hotels seeks to ensure that the Information is reliable and accurate, errors and omissions may occur and therefore, to the extent permitted by law, WB Hotels does not make or give any representation or warranty (express or implied) of any kind as to any matter relating to the Site and any Linked Web Site, including without limitation, as to merchantability, non infringement of intellectual property rights or fitness for purpose.
 In particular WB Hotels does not warrant that:
 						<ol>
@@ -134,7 +134,7 @@ You must ensure that any information which you provide to WB Hotels is accurate 
 				  
 				   <h2>Linked Websites</h2>
 				   
-				   <p>The Site may contain links to other web sites ("Linked Web Sites"). Those links are provided for convenience only and may not remain current or be maintained.
+				   <p>The Site may contain links to other web sites (&quot;Linked Web Sites&quot;). Those links are provided for convenience only and may not remain current or be maintained.
 You acknowledge and agree that WB Hotels does not have any control over the content or availability of Linked Web Sites and accepts no responsibility for the content, privacy practices or any other aspect of Linked Web Sites.
 Links with Linked Web Sites should not be construed as an endorsement, approval or recommendation by WB Hotels of the owners or operators of those Linked Web Sites, or of any information, graphics, materials, products or services referred to or contained on those Linked Web Sites, unless and then only to the extent expressly stipulated to the contrary.
 </p>
