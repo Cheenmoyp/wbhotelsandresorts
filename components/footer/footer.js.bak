@@ -14,7 +14,7 @@ export const Footer = () => {
     <div className="container">
       <div className="row">
       
-				 <div className="col-lg-7">
+				 <div className="col-lg-6">
 						<div className="left"> 	
 							<ul>
 								<li> © 2022 WB Hotels & Resorts.   </li>
@@ -29,7 +29,7 @@ export const Footer = () => {
 						
 				 
 				 </div>
-				  <div className="col-lg-5">
+				  <div className="col-lg-6">
 						<div className="right">
 						
 					<ul>
