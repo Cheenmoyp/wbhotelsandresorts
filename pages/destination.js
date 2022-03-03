@@ -215,7 +215,7 @@ const Destination = () => {
                         </div>
                         <div className="amenities">
                         <ul>
-                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>WB Safe</li>
+                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>ROMT Safe</li>
                             <li><span><img src="/Images/packages/icons/free-wifi.png" alt="" title=""/></span>Free WIFI</li>
                             <li><span><img src="/Images/packages/icons/Housekeeping.png" alt="" title=""/></span>Hosekeeping</li>
                             <li><a href="#">+More</a></li>
@@ -256,14 +256,14 @@ const Destination = () => {
                         </div>
                         <div className="amenities">
                         <ul>
-                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>WB Safe</li>
+                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>ROMT Safe</li>
                             <li><span><img src="/Images/packages/icons/free-wifi.png" alt="" title=""/></span>Free WIFI</li>
                             <li><span><img src="/Images/packages/icons/Housekeeping.png" alt="" title=""/></span>Hosekeeping</li>
                             <li><a href="#">+More</a></li>
                         </ul>
                         </div>
                         <div className="hotel-box2-footer">
-                        
+                         
                         </div>
                     </div>
                     
@@ -298,14 +298,14 @@ const Destination = () => {
                         </div>
                         <div className="amenities">
                         <ul>
-                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>WB Safe</li>
+                            <li><span><img src="/Images/packages/icons/Safe.png" alt="" title=""/></span>ROMT Safe</li>
                             <li><span><img src="/Images/packages/icons/free-wifi.png" alt="" title=""/></span>Free WIFI</li>
                             <li><span><img src="/Images/packages/icons/Housekeeping.png" alt="" title=""/></span>Hosekeeping</li>
                             <li><a href="#">+More</a></li>
                         </ul>
                         </div>
                         <div className="hotel-box2-footer">
-                       
+                         
                         </div>
                     </div>
                     
@@ -313,7 +313,7 @@ const Destination = () => {
                     <div className="col-md-3 hotel-box2-right">
                         <ul className="rating">
                         <li><span>4.5/5</span>185 Ratings</li>
-                        <li><span className="cut-price">₹ 4300</span>₹ 3,700</li>
+                        <li><span className="cut-price"> </span>₹</li>
                         </ul>
                         <a href="hotel-details.php" className="book-now-btn">Book Now</a>
                     </div>

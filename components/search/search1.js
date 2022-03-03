@@ -19,10 +19,8 @@ export default function Search(props) {
 	const [hotelList, setHotelList] = useState([]);
 	const suggestClass = suggestBox ? 'display-block' : 'display-none';
 	const [cityList, setCityList] = useState([]);
-	const [cityValue, setCityValue] = useState('');
-	const [dropdownStatus, setDropdownStatus] = useState('');
-	const [adult, setAdult] = useState(props.adult && props.adult!='undefined' ? props.adult : 1);
-	const [kid, setKid] = useState(props.kid && props.kid!='undefined' ? props.kid : 0);
+	const [adult, setAdult] = useState(props.adult ? props.adult : 1);
+	const [kid, setKid] = useState(props.kid ? props.kid : 0);
     const router = useRouter();
 	var tomorow_date = new Date();
 	var today_date = new Date();
@@ -54,10 +52,10 @@ export default function Search(props) {
 			
 		//console.log(selected_data);return;
 			if (selected_data && selected_data[0].type == 'hotel') {
-				let url = base64_encode(formData.cityid + '/' + formData.checkin + '/' + formData.checkout + '/' + formData.adult + '/' + formData.kid);
+				let url = base64_encode(formData.cityid+'/'+moment(formData.checkin).format("MM-DD-YYYY") +'/'+ moment(formData.checkout).format("MM-DD-YYYY") +'/'+formData.adult+'/'+formData.kid);
 				router.push(`/hotel-details/${url}`)
 			} else {
-				let url = base64_encode(selected_data[0].label+'/'+formData.cityid+'/'+ formData.checkin +'/'+ formData.checkout +'/'+(formData.adult ? formData.adult : adult)+'/'+(formData.kid ? formData.kid : kid));
+				let url = base64_encode(selected_data[0].label+'/'+formData.cityid+'/'+moment(formData.checkin).format("MM-DD-YYYY") +'/'+ moment(formData.checkout).format("MM-DD-YYYY") +'/'+formData.adult+'/'+formData.kid);
 				router.push(`/destination/${url}`)
 			}			
 		} else {
@@ -70,8 +68,8 @@ export default function Search(props) {
 		setHotelList([]);
 		var selectedDateIn = formData.checkin?moment(formData.checkin).format("YYYY-MM-DD"):moment(date_checkin.checkin).format("YYYY-MM-DD");
 		var selectedDateOut = formData.checkout?moment(formData.checkout).format("YYYY-MM-DD"):moment(date_checkin.checkout).format("YYYY-MM-DD");
-		const fetcher2  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-hotels-by-city/2533/${city_id}`).then(response => {
-		//const fetcher2  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/check-availability?group_id=2533&city_id=${city_id}&checkin_date=${selectedDateIn}&checkout_date=${selectedDateOut}&no_of_rooms&star_rating&min_price&max_price&amenities`).then(response => {
+		const fetcher2  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-hotels-by-city/2565/${city_id}`).then(response => {
+		//const fetcher2  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/check-availability?group_id=2565&city_id=${city_id}&checkin_date=${selectedDateIn}&checkout_date=${selectedDateOut}&no_of_rooms&star_rating&min_price&max_price&amenities`).then(response => {
 			//return response.data.hotels_data
 			return response.data.hotels
 		})
@@ -100,7 +98,6 @@ export default function Search(props) {
 		if(textData.cityid) {
 			console.log('city', textData.cityid);
 			setCity('');
-			cityValueSet(cityList,textData.cityid);
 			//loadHotel(textData.cityid);
 		}
 		if(textData.adult) {
@@ -127,7 +124,7 @@ export default function Search(props) {
 	
 	function cityListFetch() {
 		if(cityList.length == 0) {
-			//const fetcher1  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-city-list/2533`).then(response => {
+			//const fetcher1  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-city-list/2565`).then(response => {
 			//return response.data.cities
 			const fetcher1  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-city-and-hotels/2533`).then(response => {
 				return response.data.results
@@ -144,71 +141,37 @@ export default function Search(props) {
 							"label": city.name,
 							"type": city.type
 						})
-					});
-					setCityList(cityOption);
-					cityValueSet(cityOption,formData.cityid ? formData.cityid : props.cityid)
+					});//console.log('cityOption',cityOption);
+					setCityList(cityOption)
 				}
 			})
 		}
 	}
-	function loadTextChange(value) {
-		setCityValue(value);
-	}
-	function cityValueSet(cityListValue, cityidVal) {
-		var citySelected = cityListValue.filter(option => option.value == (cityidVal))?cityListValue.filter(option => option.value == (cityidVal))[0]:'';
-		setCityValue(citySelected?citySelected.label:'');
-	}
-	
-	function dateformat(selectdate, dateformat) {
-		var d = new Date(selectdate);
-		var datevalue = d.getDate();
-		var monthvalue = d.getMonth()+1;
-		var yearvalue = d.getFullYear();
-		if (dateformat == 'd-m-y') {
-			return datevalue + '-' + monthvalue + '-' + yearvalue;
-		} else if (dateformat == 'm-d-y') {
-			return monthvalue + '-' + datevalue + '-' + yearvalue;
-		} else {
-			return datevalue + '/' + monthvalue + '/' + yearvalue;
-		} 
-	}
-	//var citySelected = cityList.filter(option => option.value == (formData.cityid ? formData.cityid : props.cityid))?cityList.filter(option => option.value == (formData.cityid ? formData.cityid : props.cityid))[0]:'';
-	//console.log('hello', JSON.parse(citySelected).label);
-	console.log('hello', cityValue);
+	//console.log('hello', cityList.filter(option => option.value == (formData.cityid ? formData.cityid : props.cityid)));
     return (
 		<>
         <form>
-            <div className="form-control" tabIndex={0}
-			
-				onFocus={()=> { setDropdownStatus('show-dropdown') }}
-				onBlur={()=> { setDropdownStatus('') }}
-			
-			>
-				<input type="search" placeholder="What are you looking for?" 
-                value={cityValue ? cityValue:''}
-                onChange={(event) => {
-					loadTextChange(event.target.value);
-                }}
-                />
-				
-				<ul className={`dropdown-content `+ dropdownStatus} >
+            <div className="form-control">
+				{/* <select className="hotelfield" onChange={(event) => {
+                handleTextChange({
+                    cityid: event.target.value,
+                });}} 
+				value={city ? city : val}
+				>
+					<option value="">Select Destination</option>
 					{cityList.map((city,index) => {
-						
-						if (city.label.toLowerCase().includes(cityValue.toLowerCase())){
+						if (city == city.city_id) {
 							return (
-								<li onClick={(e) => {
-									setDropdownStatus('');
-									setCityValue('');								
-									handleTextChange({
-										cityid: city.value
-									});}} 
-									key={index}>{city.label}</li>
+								<option value={city.city_id} key={index} selected>{city.city_name}</option>
 							);
-						}
-						
-					})}
-				 </ul>
-				{/* <Select options={cityList} clearOnSelect={true} malti={false} className="hotelfield" placeholder="Select Destination"  clearable={true} onChange={(values) => {
+						} else { 
+							return (
+								<option value={city.city_id} key={index} >{city.city_name}</option>
+							);
+							} 
+ 					})}
+				</select> */}
+				<Select options={cityList} clearOnSelect={true} malti={false} className="hotelfield" placeholder="Select Destination"  clearable={true} onChange={(values) => {
 					
                 handleTextChange({
                     cityid: values.length?values[0].value:'',
@@ -217,10 +180,30 @@ export default function Search(props) {
 					cityList.filter(option => 
 					   option.value == (formData.cityid ? formData.cityid : props.cityid))
 				 }
-				/> */}
+				/>
 				
             </div>
 			<div className="form-control">
+				{/* <select className="hotelfield" placeholder="Select Hotels"
+				onChange={(event) => {
+					handleTextChange({
+						hotelid: event.target.value,
+					});}} 
+				value={props.hotelid}>
+					<option value="">Select Hotel</option>
+					{hotelList && hotelList.map((hotel,index) => {
+						if (props.hotelid == hotel.hotel_id) {
+							return (
+								<option value={hotel.hotel_id} key={index} selected>{hotel.hotel_name}</option>
+							);
+						} else {
+							return (
+								<option value={hotel.hotel_id} key={index}>{hotel.hotel_name}</option>
+							);
+						} 
+						
+					})}
+				</select> */}
 				
             </div>
             <div className="form-control">
@@ -240,17 +223,17 @@ export default function Search(props) {
                 }} />
             </div>
    
-			 <div className="btn-group show-on-hover kids-adult  guestbar">
+			 <div className="   btn-group show-on-hover kids-adult  guestbar">
 				  <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">
 					Guests <span className="caret"></span><br />
-					<small> {formData.adult ? formData.adult:adult} Adult, {formData.kid || formData.kid == 0 ? formData.kid: kid} Kid</small>
+					<small>{formData.kid || formData.kid == 0 ? formData.kid: kid} Kid, {formData.adult ? formData.adult:adult} Adult</small>
 				  </button>
 					  <ul className="dropdown-menu" role="menu">
 						<li> 
 							  <div className="form-control ">
-							  <span className="label-control">ADULTS  </span>
+							  <span className="label-control">ADULTS (12y +)</span>
 							  
-								<span className="btn btn-default bgd-count"  onClick={(event) => {
+								<span className="btn btn-default"  onClick={(event) => {
 									if (adult > 1) {
 										handleTextChange({
 											adult: formData.adult?parseInt(formData.adult)-1:1,
@@ -258,9 +241,9 @@ export default function Search(props) {
 									}
 								}} >-</span>
 								
-								<input className="counter-box-new" type="number" name="" placeholder="Adult" max="3" min="0" value={formData.adult ? formData.adult:adult}
+								<input type="number" name="" placeholder="Adult" max="3" min="0" value={formData.adult ? formData.adult:adult}
 								 onKeyPress="return '0';"  />
-								<span className="btn btn-default bgd-count"  onClick={(event) => {
+								<span className="btn btn-default"  onClick={(event) => {
 									if (adult == 0 || adult <=3) {
 										handleTextChange({
 											adult: formData.adult?parseInt(formData.adult)+1:1,
@@ -272,8 +255,8 @@ export default function Search(props) {
 							 
 							<div className="form-control" >
 							
-								<span className="label-control">CHILDREN  </span>
-								<span className="btn btn-default bgd-count  " onClick={(event) => {
+								<span className="label-control">CHILDREN (Age 12y and below)</span>
+								<span className="btn btn-default  " onClick={(event) => {
 									if (kid >= 0) {
 										handleTextChange({
 												kid: formData.kid?parseInt(formData.kid)-1:0,
@@ -281,8 +264,8 @@ export default function Search(props) {
 									}
 								}} >-</span>
 								
-								<input className="counter-box-new" type="number" name="" placeholder="Kids" max="2" min="0" value={formData.kid || formData.kid == 0 ? formData.kid: kid} readOnly />
-								<span className="btn btn-default bgd-count" onClick={(event) => {
+								<input type="number" name="" placeholder="Kids" max="2" min="0" value={formData.kid || formData.kid == 0 ? formData.kid: kid} readOnly />
+								<span className="btn btn-default" onClick={(event) => {
 									if ((kid<=2)) {
 										handleTextChange({
 											kid: formData.kid?parseInt(formData.kid)+1:1,

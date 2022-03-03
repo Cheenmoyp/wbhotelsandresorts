@@ -23,28 +23,42 @@ const Destination = (response) => {
     const [category, setCategory] = useState('');
     const [property, setProperty] = useState('');
     const [city, setCity] = useState('');
+	const [destinationList, setDestinatioList] = useState([]);
     let hotel_name = [];
     
 	function loadHotels() {
-	if (hotelList.length == 0) {
-        //console.log('aminities',amenities);return;
-		//const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter2?group_id=2533&city_name=${response.city}&star_rating=${starRating}&min_price&max_price`).then(response => {
-		//const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter3?group_id=2533&city_name=${response.city}&star_rating=${starRating}&min_price=${minPrice}&max_price=${maxPrice}&amenities=${amenities.join()}&category=${category}`).then(response => {
-        const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter3?group_id=2533&city_name=${response.city}&star_rating=${starRating}&min_price=${minPrice}&max_price=${maxPrice}&amenities=${amenities && amenities.join()}&category=${category}&property_type=${property}`).then(response => {
-			return response.data
-		})
-		.catch(error => {
-			console.log('error', error);
-		});
+		if (hotelList.length == 0) {
+			//console.log('aminities',amenities);return;
+			//const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter2?group_id=2533&city_name=${response.city}&star_rating=${starRating}&min_price&max_price`).then(response => {
+			//const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter3?group_id=2533&city_name=${response.city}&star_rating=${starRating}&min_price=${minPrice}&max_price=${maxPrice}&amenities=${amenities.join()}&category=${category}`).then(response => {
+			const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/filter3?group_id=2533&city_name=${response.city}&star_rating=${starRating}&min_price=${minPrice}&max_price=${maxPrice}&amenities=${amenities && amenities.join()}&category=${category}&property_type=${property}`).then(response => {
+				return response.data
+			})
+			.catch(error => {
+				console.log('error', error);
+			});
 
-		fetcher.then(response => {
-			// if(hotelList.length == 0 ) {
-				setHotelList(response);
-				setDestinationBanner(response.destination_image && response.destination_image)
-			// }
-		})
-		
+			fetcher.then(response => {
+				// if(hotelList.length == 0 ) {
+					setHotelList(response);
+					setDestinationBanner(response.destination_image && response.destination_image)
+				// }
+			})
+			
+		}
 	}
+	function loadDestinations() {		
+		if (!destinationList.length) {
+			const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-destination-list/2533/ALL`).then(response => {
+				return response.data;
+			})
+			.catch(error => {
+				console.log('error', error);
+			});
+			fetcher.then(response => {
+				setDestinatioList(response.destinations)  
+			}) 
+		} 
 	}
 	
 	
@@ -107,9 +121,13 @@ const Destination = (response) => {
  
 	var itemsPerPage= 3;
   useEffect(() => {
+	  loadDestinations();
+  },[destinationList]);
+  useEffect(() => {
     //console.log(`Loading itemsrahul`);
 	   //if (hotelList.length == 0) {
         loadHotels();
+		
         var hotels = hotelList.hotels_data;//console.log('hotels', hotels);
 	   //}
     // Fetch items from another resources.
@@ -450,6 +468,25 @@ function UnSelectAll() {
 									</li>
                                     </ul>
                                 </div>
+								
+                                <div className="filter-list-con">
+                                    <h4>Cities</h4>
+                                    <ul>
+                                        {destinationList && destinationList.map((city, index) => {
+                                            return (
+                                                <li key={index}>
+                                                    <input type="radio" id="city" name="city" value={city} onChange={(event) => { handleFormChange({
+                                                        city: event.target.value,
+                                                    });}}
+                                                    />
+                                                    <label htmlFor="city">{city}</label>
+                                                </li>
+                                            )
+                                        })}
+                                        
+                                    </ul>
+                                </div>
+								
                                 </div>
                             </div>
                             </div>

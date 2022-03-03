@@ -172,7 +172,7 @@ export default function Rooms(props) {
                                                             </div>
                                                             <div className="col-5">
                                                                 <div className="price">
-                                                                    <h6><i className="fa fa-inr" aria-hidden="true"></i> {rateplan.bar_price}</h6>
+                                                                    <h6>₹ {rateplan.bar_price}</h6>
                                                                     <p>Per room / Night</p>
                                                                     <p>Excluding GST</p>
                                                                 </div>

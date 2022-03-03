@@ -15,12 +15,7 @@ import ReactPlayer from 'react-player'
 
 export default function Home() {
   const router = useRouter()
-  const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST}/group-hotel-list/2533`).then(response => {
-        return response.data.hotels_data
-      })
-      .catch(error => {
-          console.log('error', error);
-      });
+  
   
   const [ourHotelData, setOurHotelData] = useState([])
   const [searchData, setSearchData] = useState();
@@ -38,17 +33,23 @@ export default function Home() {
 			}
 		})
 	})
+	useEffect(()=>{
+	  if(ourHotelData.length == 0 ) {
+		const fetcher  = axios.get(`${process.env.NEXT_PUBLIC_HOST_BE}/group-hotel-list/2533`).then(response => {
+				return response.data.hotels_data
+			  })
+			  .catch(error => {
+				  console.log('error', error);
+			  });
+		  
 
-  fetcher.then(response => {
-    if(ourHotelData.length == 0 ) {
-      setOurHotelData(response)
-    }
-  })
-
-  const handleClick = e => {
-    e.preventDefault()
-    router.push(`/hotels/${searchData.firstname}`)
-  }
+		fetcher.then(response => {
+			
+			 setOurHotelData(response)
+		})
+	 }
+	},[])
+  
 
   const handleTextChange = (textData) => {
     setSearchData(textData);

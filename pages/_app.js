@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'font-awesome/css/font-awesome.min.css';
 import '../styles/Home.module.css';
 import '../public/css/romt.css';
+import '../public/css/wb.css';
 import '../public/css/aos.css';
 import '../public/css/owl.carousel.min.css';
 import '../public/css/owl.theme.min.css';
