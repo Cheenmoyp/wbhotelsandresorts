@@ -138,7 +138,7 @@ const destinationResponsive = {
         <div className="row">
           <div className="col-lg-6 offset-lg-3 col-md-10 offset-md-1">
             <h1>Make Your Stay Comfortable </h1>
-            <h3>Get instant benefits with <strong>WB Hotels & Resorts</strong> More than 650+ hotels, in 110+ locations with 13500 rooms and growing daily</h3>
+            <h3>Get instant benefits with <strong>WB Hotels & Resorts</strong> More than 1000+ hotels, in 150+ locations with 25000 rooms and growing daily</h3>
 			 
           </div>
         </div>
